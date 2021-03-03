@@ -27,12 +27,14 @@ public class NPCAI : MonoBehaviour
     private GameObject[] waypoints;
     private Animator anim;
     private NavMeshAgent nav;
+    private INPCAttack attackMethod;
 
     void Start()
     {
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         anim = this.GetComponent<Animator>();
         nav = this.GetComponent<NavMeshAgent>();
+        attackMethod = this.GetComponent<INPCAttack>();
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class NPCAI : MonoBehaviour
                 UpdateFollowState();
                 break;
             case FSMStates.Attack:
+                UpdateAttackState();
                 break;
             case FSMStates.Dead:
                 break;
@@ -58,6 +61,7 @@ public class NPCAI : MonoBehaviour
 
     public void TurnChad()
     {
+        // Create some Chad effect
         isChad = true;
     }
 
@@ -88,6 +92,27 @@ public class NPCAI : MonoBehaviour
             nav.ResetPath();
             currentState = FSMStates.Idle;
         }
+    }
+
+    void UpdateAttackState()
+    {
+        nav.stoppingDistance = attackDistance;
+
+        if (distanceToPlayer > attackDistance)
+        {
+            currentState = FSMStates.Follow;
+        }
+        else if (distanceToPlayer > followDistance)
+        {
+            nav.ResetPath();
+            currentState = FSMStates.Idle;
+        }
+
+        FaceTarget(player.transform.position);
+        nav.SetDestination(player.transform.position);
+
+        anim.SetInteger("animState", 2);
+        attackMethod.Attack();
     }
 
     void FaceTarget(Vector3 target)

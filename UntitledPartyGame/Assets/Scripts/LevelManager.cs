@@ -16,6 +16,9 @@ public class LevelManager : MonoBehaviour
     public Slider noiseSlider;
     public Text timeToCopsText;
     public Text objectiveText;
+    public Text noiseLevelText;
+    public Color sliderStartColor = Color.blue;
+    public Color sliderWinColor = Color.red;
 
     // Strings for each objective
     [Header("Main Objectives")]
@@ -54,8 +57,9 @@ public class LevelManager : MonoBehaviour
     string timeToCopsStartPrefixText = "Time Until Cops Are Called: ";
     float timer;
     bool cops = false;
-    List<GameObject> partygoers; // = new List<GameObject>();
+    List<GameObject> partygoers;
     bool chadstorm = false;
+    string noiseLevelWinText = "It is quiet enough now.\nReturn home to win!";
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +69,7 @@ public class LevelManager : MonoBehaviour
         timer = timeToCops;
         partygoers = new List<GameObject>(GameObject.FindGameObjectsWithTag("Partygoer"));
         SetObjectiveTextList();
+        SetSliderColor(sliderStartColor);
     }
 
     // Update is called once per frame
@@ -81,16 +86,26 @@ public class LevelManager : MonoBehaviour
             SetTimeText();
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && !tv)
+        if (Input.GetKeyDown(KeyCode.T) && !tv)
         {
             TVComplete();
             //MainObjectiveComplete();
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && !punch)
+        if (Input.GetKeyDown(KeyCode.D) && !dj)
+        {
+            DJComplete();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P) && !punch)
         {
             PunchComplete();
             //SideObjectiveComplete();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) && !solo)
+        {
+            SoloComplete();
         }
     }
 
@@ -103,7 +118,15 @@ public class LevelManager : MonoBehaviour
         {
             chadstorm = true;
             Chadstorm();
+            SetSliderColor(sliderWinColor);
+            noiseLevelText.text = noiseLevelWinText;
         }
+    }
+
+    private void SetSliderColor(Color color)
+    {
+        noiseSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color 
+            = color;
     }
 
     public void SideObjectiveComplete()
@@ -199,7 +222,6 @@ public class LevelManager : MonoBehaviour
     {
         tv = true;
         tvText = ObjectiveTextComplete(tvText);
-        Debug.Log(tvText);
         MainObjectiveComplete();
     }
 

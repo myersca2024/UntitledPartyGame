@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Partygoer
   - Chad
+  - Throwable
   layers:
   - Default
   - TransparentFX

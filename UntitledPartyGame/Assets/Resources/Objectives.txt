@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -168,13 +168,13 @@ public class LevelManager : MonoBehaviour
 
     private void SetObjectiveTextList()
     {
-        objectiveText.text = string.Format("<B>Main Objectives</B>\n") +
+        objectiveText.text = "Main Objectives\n" +
                               tvText + "\n" +
                               speakerText + "\n" +
                               djText + "\n" +
                               parentsText + "\n" +
                               poolText + "\n\n" +
-                              string.Format("<B>Side Objectives</B>\n") +
+                              "Side Objectives\n" +
                               punchText + "\n" +
                               liquorText + "\n" +
                               foodText + "\n" +

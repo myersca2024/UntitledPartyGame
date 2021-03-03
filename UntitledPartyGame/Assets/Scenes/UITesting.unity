@@ -491,13 +491,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingNoiseLevel: 200
-  winNoiseThreshold: 75
+  winNoiseThreshold: 100
   timeToCops: 400
   sideObjectiveNoiseReduction: 25
   mainObjectiveNoiseReduction: 50
   noiseSlider: {fileID: 1298722685}
   timeToCopsText: {fileID: 963200260}
   objectiveText: {fileID: 758231469}
+  noiseLevelText: {fileID: 995267343}
+  sliderStartColor: {r: 0, g: 0, b: 1, a: 1}
+  sliderWinColor: {r: 1, g: 0, b: 0, a: 1}
   tvText: Break the TV
   speakerText: Throw the Speakers Out Of The House
   djText: Punch the DJ
@@ -947,8 +950,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Noise Level
 --- !u!222 &995267344
@@ -1317,7 +1320,7 @@ MonoBehaviour:
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 200
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 200
   m_OnValueChanged:
     m_PersistentCalls:

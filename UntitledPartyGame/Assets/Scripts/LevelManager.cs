@@ -60,7 +60,6 @@ public class LevelManager : MonoBehaviour
     List<GameObject> partygoers;
     bool chadstorm = false;
     string noiseLevelWinText = "It is quiet enough now.\nReturn home to win!";
-
     // Start is called before the first frame update
     void Start()
     {

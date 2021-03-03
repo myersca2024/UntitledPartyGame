@@ -27,12 +27,14 @@ public class NPCAI : MonoBehaviour
     private GameObject[] waypoints;
     private Animator anim;
     private NavMeshAgent nav;
+    private INPCAttack attackMethod;
 
     void Start()
     {
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         anim = this.GetComponent<Animator>();
         nav = this.GetComponent<NavMeshAgent>();
+        attackMethod = this.GetComponent<INPCAttack>();
     }
 
     void Update()
@@ -45,8 +47,10 @@ public class NPCAI : MonoBehaviour
                 UpdateIdleState();
                 break;
             case FSMStates.Follow:
+                UpdateFollowState();
                 break;
             case FSMStates.Attack:
+                UpdateAttackState();
                 break;
             case FSMStates.Dead:
                 break;
@@ -57,6 +61,7 @@ public class NPCAI : MonoBehaviour
 
     public void TurnChad()
     {
+        // Create some Chad effect
         isChad = true;
     }
 
@@ -75,6 +80,7 @@ public class NPCAI : MonoBehaviour
         anim.SetInteger("animState", 1);
 
         nav.stoppingDistance = attackDistance;
+        FaceTarget(player.transform.position);
         nav.SetDestination(player.transform.position);
 
         if (distanceToPlayer <= attackDistance)
@@ -83,8 +89,38 @@ public class NPCAI : MonoBehaviour
         }
         else if (distanceToPlayer > followDistance)
         {
+            nav.ResetPath();
             currentState = FSMStates.Idle;
         }
+    }
+
+    void UpdateAttackState()
+    {
+        nav.stoppingDistance = attackDistance;
+
+        if (distanceToPlayer > attackDistance)
+        {
+            currentState = FSMStates.Follow;
+        }
+        else if (distanceToPlayer > followDistance)
+        {
+            nav.ResetPath();
+            currentState = FSMStates.Idle;
+        }
+
+        FaceTarget(player.transform.position);
+        nav.SetDestination(player.transform.position);
+
+        anim.SetInteger("animState", 2);
+        attackMethod.Attack();
+    }
+
+    void FaceTarget(Vector3 target)
+    {
+        Vector3 directionToTarget = (target - transform.position).normalized;
+        directionToTarget.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10 * Time.deltaTime);
     }
 
     // Credit to IsPlayerInFOV code to Prof. Caglar Yildirim

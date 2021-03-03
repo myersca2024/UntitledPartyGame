@@ -45,6 +45,7 @@ public class NPCAI : MonoBehaviour
                 UpdateIdleState();
                 break;
             case FSMStates.Follow:
+                UpdateFollowState();
                 break;
             case FSMStates.Attack:
                 break;
@@ -75,6 +76,7 @@ public class NPCAI : MonoBehaviour
         anim.SetInteger("animState", 1);
 
         nav.stoppingDistance = attackDistance;
+        FaceTarget(player.transform.position);
         nav.SetDestination(player.transform.position);
 
         if (distanceToPlayer <= attackDistance)
@@ -83,8 +85,17 @@ public class NPCAI : MonoBehaviour
         }
         else if (distanceToPlayer > followDistance)
         {
+            nav.ResetPath();
             currentState = FSMStates.Idle;
         }
+    }
+
+    void FaceTarget(Vector3 target)
+    {
+        Vector3 directionToTarget = (target - transform.position).normalized;
+        directionToTarget.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10 * Time.deltaTime);
     }
 
     // Credit to IsPlayerInFOV code to Prof. Caglar Yildirim

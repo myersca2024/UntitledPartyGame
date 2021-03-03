@@ -8,12 +8,14 @@ public class Reticle : MonoBehaviour
 
     public Image reticleImage;
     public float throwStrength = 10f;
-    public float grabRange = 5f;
+    public float grabRange = 3f;
+    public float holdDistance = 1f;
     public Color reticleOnThrowable;
 
     GameObject player;
     bool holdingSomething;
     Color originalReticleColor;
+    GameObject heldItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class Reticle : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         HandleGrab();
@@ -31,9 +33,36 @@ public class Reticle : MonoBehaviour
     void HandleGrab()
     {
         RaycastHit hit;
+        if(holdingSomething)
+        {
+            heldItem.transform.localPosition = new Vector3(0, 0, holdDistance);
+            heldItem.transform.rotation = transform.rotation;
+        }
         if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
         {
-
+            if(hit.collider.CompareTag("Throwable"))
+            {
+                reticleImage.color = reticleOnThrowable;
+                if (Input.GetMouseButtonDown(1)) //On right click...
+                {
+                    if(holdingSomething)
+                    {
+                        holdingSomething = false;
+                        transform.DetachChildren();
+                        heldItem = null;
+                    }
+                    else
+                    {
+                        holdingSomething = true;
+                        heldItem = hit.collider.gameObject;
+                        heldItem.transform.SetParent(gameObject.transform);
+                    }
+                }
+            }
+            else
+            {
+                reticleImage.color = originalReticleColor;
+            }
         }
     }
 }

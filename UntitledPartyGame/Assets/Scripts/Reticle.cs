@@ -7,7 +7,7 @@ public class Reticle : MonoBehaviour
 {
 
     public Image reticleImage;
-    public float throwStrength = 10f;
+    public float throwStrength = 50f;
     public float grabRange = 3f;
     public float holdDistance = 1f;
     public Color reticleOnThrowable;
@@ -35,9 +35,18 @@ public class Reticle : MonoBehaviour
         RaycastHit hit;
         if(holdingSomething)
         {
+            //Debug.Log("Holding");
             heldItem.transform.localPosition = new Vector3(0, 0, holdDistance);
             heldItem.transform.rotation = transform.rotation;
-        }
+            if (Input.GetMouseButtonDown(1)) //I apparently can't have this in the if Raycast, despite the object literally being right in your face
+            {
+                Debug.Log("Throw");
+                holdingSomething = false;
+                transform.DetachChildren();
+                heldItem.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength, ForceMode.VelocityChange);
+                heldItem = null;
+                }
+            }
         if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
         {
             if(hit.collider.CompareTag("Throwable"))
@@ -47,12 +56,11 @@ public class Reticle : MonoBehaviour
                 {
                     if(holdingSomething)
                     {
-                        holdingSomething = false;
-                        transform.DetachChildren();
-                        heldItem = null;
+                        //Do Nothing
                     }
                     else
                     {
+                        Debug.Log("Grab");
                         holdingSomething = true;
                         heldItem = hit.collider.gameObject;
                         heldItem.transform.SetParent(gameObject.transform);

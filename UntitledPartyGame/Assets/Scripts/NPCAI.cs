@@ -10,7 +10,7 @@ public class NPCAI : MonoBehaviour
         Idle,
         Follow,
         Attack,
-        Dead,
+        Stun,
         Leave
     }
 
@@ -52,7 +52,8 @@ public class NPCAI : MonoBehaviour
             case FSMStates.Attack:
                 UpdateAttackState();
                 break;
-            case FSMStates.Dead:
+            case FSMStates.Stun:
+
                 break;
             case FSMStates.Leave:
                 break;

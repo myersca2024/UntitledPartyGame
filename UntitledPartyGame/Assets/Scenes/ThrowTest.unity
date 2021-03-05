@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 1201968690}
   - component: {fileID: 1201968689}
   - component: {fileID: 1201968693}
+  - component: {fileID: 1201968694}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Throwable
@@ -589,6 +590,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1201968694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201968688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e8fb0f2cb7f0242905d9c1307b7e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571746982
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +685,11 @@ PrefabInstance:
       propertyPath: reticleImage
       value: 
       objectReference: {fileID: 726780308}
+    - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
+        type: 3}
+      propertyPath: throwStrength
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
         type: 3}
       propertyPath: reticleOnThrowable.a

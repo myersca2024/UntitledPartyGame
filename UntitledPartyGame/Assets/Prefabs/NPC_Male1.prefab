@@ -1079,7 +1079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   player: {fileID: 0}
-  followDistance: 0
+  followDistance: 10
+  attackDistance: 1
   eyes: {fileID: 961396267}
   fieldOfView: 45
   isChad: 0
@@ -1116,9 +1117,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.34431076
-  m_Height: 1.7331023
+  m_Height: 1.7037001
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8081322, z: 0.021531105}
+  m_Center: {x: 0, y: 0.8228333, z: 0.021531105}
 --- !u!95 &296465637
 Animator:
   serializedVersion: 3

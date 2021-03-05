@@ -7,6 +7,8 @@ TagManager:
   - Partygoer
   - Chad
   - Throwable
+  - Waypoint
+  - Hitbox
   layers:
   - Default
   - TransparentFX

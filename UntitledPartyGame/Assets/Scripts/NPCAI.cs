@@ -10,7 +10,7 @@ public class NPCAI : MonoBehaviour
         Idle,
         Follow,
         Attack,
-        Dead,
+        Stun,
         Leave
     }
 
@@ -21,25 +21,34 @@ public class NPCAI : MonoBehaviour
     public Transform eyes;
     public float fieldOfView = 45f;
     public bool isChad = false;
+    public bool makeLeave = false;
+    public GameObject[] waypoints;
+    public float stunTime;
 
     private Vector3 nextDestination;
     private float distanceToPlayer;
-    private GameObject[] waypoints;
+    private int currentWaypoint = 0;
     private Animator anim;
     private NavMeshAgent nav;
     private INPCAttack attackMethod;
+    private float currentStunTime;
 
     void Start()
     {
-        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
         anim = this.GetComponent<Animator>();
         nav = this.GetComponent<NavMeshAgent>();
         attackMethod = this.GetComponent<INPCAttack>();
+        currentStunTime = stunTime;
     }
 
     void Update()
     {
         distanceToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
+
+        if (makeLeave)
+        {
+            currentState = FSMStates.Leave;
+        }
 
         switch (currentState)
         {
@@ -52,9 +61,11 @@ public class NPCAI : MonoBehaviour
             case FSMStates.Attack:
                 UpdateAttackState();
                 break;
-            case FSMStates.Dead:
+            case FSMStates.Stun:
+                UpdateStunState();
                 break;
             case FSMStates.Leave:
+                UpdateLeaveState();
                 break;
         }
     }
@@ -115,6 +126,51 @@ public class NPCAI : MonoBehaviour
         attackMethod.Attack();
     }
 
+    void UpdateStunState()
+    {
+        anim.SetInteger("animState", 3);
+        currentStunTime -= Time.deltaTime;
+
+        if (currentStunTime <= 0)
+        {
+            currentState = FSMStates.Idle;
+            currentStunTime = stunTime;
+        }
+    }
+
+    void UpdateLeaveState()
+    {
+        if (currentWaypoint >= waypoints.Length)
+        {
+            currentState = FSMStates.Idle;
+        }
+        else
+        {
+            anim.SetInteger("animState", 1);
+
+            GameObject nextWaypoint = waypoints[currentWaypoint];
+            FaceTarget(nextWaypoint.transform.position);
+            nav.SetDestination(nextWaypoint.transform.position);
+
+            float distanceToWaypoint = Vector3.Distance(this.transform.position, nextWaypoint.transform.position);
+            Debug.Log(distanceToWaypoint.ToString());
+
+            if (distanceToWaypoint <= attackDistance)
+            {
+                if (currentWaypoint < waypoints.Length)
+                {
+                    currentWaypoint++;
+                }
+            }
+        }
+    }
+
+    public void MakeNPCLeave()
+    {
+        makeLeave = true;
+        currentState = FSMStates.Leave;
+    }
+
     void FaceTarget(Vector3 target)
     {
         Vector3 directionToTarget = (target - transform.position).normalized;
@@ -142,5 +198,17 @@ public class NPCAI : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerHitbox")
+        {
+            if (currentStunTime <= 0)
+            {
+                currentStunTime = stunTime;
+            }
+            currentState = FSMStates.Stun;
+        }
     }
 }

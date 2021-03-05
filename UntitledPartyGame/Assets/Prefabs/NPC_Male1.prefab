@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &616928616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616928617}
+  - component: {fileID: 616928618}
+  m_Layer: 0
+  m_Name: HandHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616928617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616928616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5342504237305606799}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &616928618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616928616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44879073, y: 0.60950285, z: 0.76799804}
+  m_Center: {x: -0.1643944, y: -0.15474914, z: 0.2339971}
 --- !u!1 &961396266
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 5342504237305606917}
+  - {fileID: 616928617}
   m_Father: {fileID: 5342504237305606797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1026,6 +1071,7 @@ GameObject:
   - component: {fileID: 6139371329622573849}
   - component: {fileID: 296465636}
   - component: {fileID: 296465637}
+  - component: {fileID: 1855154269}
   m_Layer: 0
   m_Name: NPC_Male1
   m_TagString: Untagged
@@ -1059,7 +1105,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1080,10 +1126,17 @@ MonoBehaviour:
   currentState: 0
   player: {fileID: 0}
   followDistance: 10
-  attackDistance: 1
+  attackDistance: 2
   eyes: {fileID: 961396267}
   fieldOfView: 45
   isChad: 0
+  makeLeave: 0
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  stunTime: 5
 --- !u!195 &6139371329622573849
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1133,12 +1186,26 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e79c578658c9be94a999ce47340a938f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1855154269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342504237305245547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c79c4842ae29542a9a1b389e5d0799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 296465637}
+  hitBox: {fileID: 616928616}
 --- !u!1 &5342504237305245551
 GameObject:
   m_ObjectHideFlags: 0

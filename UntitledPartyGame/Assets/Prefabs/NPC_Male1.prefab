@@ -39,11 +39,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616928616}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
-  m_Center: {x: -0.09, y: 0, z: 0}
+  m_Size: {x: 0.44879073, y: 0.60950285, z: 0.76799804}
+  m_Center: {x: -0.1643944, y: -0.15474914, z: 0.2339971}
 --- !u!1 &961396266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,14 @@ MonoBehaviour:
   attackDistance: 2
   eyes: {fileID: 961396267}
   fieldOfView: 45
-  isChad: 1
+  isChad: 0
+  makeLeave: 0
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  stunTime: 5
 --- !u!195 &6139371329622573849
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1179,7 +1186,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e79c578658c9be94a999ce47340a938f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

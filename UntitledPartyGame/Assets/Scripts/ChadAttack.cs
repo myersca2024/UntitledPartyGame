@@ -6,6 +6,7 @@ public class ChadAttack : MonoBehaviour, INPCAttack
 {
     public Animator anim;
     public GameObject hitBox;
+    public static bool inMiddleOfAttack = false;
 
     void Start()
     {
@@ -14,17 +15,18 @@ public class ChadAttack : MonoBehaviour, INPCAttack
 
     void INPCAttack.Attack()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("m_melee_combat_attack_A"))
+        if (!inMiddleOfAttack)
         {
-            float animTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            if (animTime <= 1)
-            {
-                hitBox.SetActive(true);
-            }
-            else
-            {
-                hitBox.SetActive(false);
-            }
+            hitBox.SetActive(true);
+            Invoke("DeactivateHitbox", 0.7f);
+            inMiddleOfAttack = true;
+            Debug.Log("Hitbox activated");
         }
+    }
+    void DeactivateHitbox()
+    {
+        hitBox.SetActive(false);
+        inMiddleOfAttack = false;
+        Debug.Log("Hitbox deactivated");
     }
 }

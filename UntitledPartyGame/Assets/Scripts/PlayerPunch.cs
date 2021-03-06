@@ -7,7 +7,7 @@ public class PlayerPunch : MonoBehaviour
 
     public Animator anim;
     public GameObject hitbox;
-    public int hitboxDuration = 30;
+    public int hitboxDuration = 60;
 
     void Start()
     {
@@ -18,7 +18,6 @@ public class PlayerPunch : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("PUNCH!");
             anim.SetInteger("animState", 2);
             hitbox.SetActive(true);
         }
@@ -29,7 +28,7 @@ public class PlayerPunch : MonoBehaviour
         if(hitboxDuration == 0)
         {
             hitbox.SetActive(false);
-            hitboxDuration = 30;
+            hitboxDuration = 60;
             anim.SetInteger("animState", 0);
         }
     }

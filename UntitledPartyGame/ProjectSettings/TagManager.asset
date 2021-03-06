@@ -10,6 +10,7 @@ TagManager:
   - Waypoint
   - Hitbox
   - PlayerPunch
+  - Bullet
   layers:
   - Default
   - TransparentFX

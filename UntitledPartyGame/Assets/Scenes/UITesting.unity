@@ -12939,6 +12939,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1004854991, guid: 2adbcceb988df214e97c182343309248, type: 3}
+      propertyPath: grabSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aa7a090548059d42b79775cb852e2e8, type: 3}
+    - target: {fileID: 1004854991, guid: 2adbcceb988df214e97c182343309248, type: 3}
+      propertyPath: throwSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 062115fb583905c4a8e78d49e93d6377, type: 3}
+    - target: {fileID: 1004854991, guid: 2adbcceb988df214e97c182343309248, type: 3}
       propertyPath: reticleImage
       value: 
       objectReference: {fileID: 542974554}

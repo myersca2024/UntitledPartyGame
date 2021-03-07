@@ -304,12 +304,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2cc505b56a45d24981de04254afb5a3, type: 3}
---- !u!1 &520428274 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 825880522259897504, guid: f51acc80434e434409f7579fafd2b832,
-    type: 3}
-  m_PrefabInstance: {fileID: 825880522108569170}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,11 +589,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Male2
       objectReference: {fileID: 0}
-    - target: {fileID: 6540876455816975779, guid: f51acc80434e434409f7579fafd2b832,
-        type: 3}
-      propertyPath: hitBox
-      value: 
-      objectReference: {fileID: 520428274}
     - target: {fileID: 6540876455816975783, guid: f51acc80434e434409f7579fafd2b832,
         type: 3}
       propertyPath: eyes
@@ -639,10 +628,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1855154269, guid: 33ff62608c06d5242b8d29a600319c73, type: 3}
-      propertyPath: chadAttackSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 69d656046b9858245aad583eaf110b56, type: 3}
+    - target: {fileID: 1675818716435286706, guid: 33ff62608c06d5242b8d29a600319c73,
+        type: 3}
+      propertyPath: isChad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1675818716435286706, guid: 33ff62608c06d5242b8d29a600319c73,
         type: 3}
       propertyPath: player
@@ -826,11 +816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Police
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069703552754020383, guid: cd5527d2075f3ec4daaa35a5a07b155a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5527d2075f3ec4daaa35a5a07b155a, type: 3}

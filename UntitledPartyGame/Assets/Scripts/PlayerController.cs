@@ -46,24 +46,21 @@ public class PlayerController : MonoBehaviour
             moveDir = Vector3.Lerp(moveDir, input, Time.deltaTime);
         }
         moveDir.y -= gravity * Time.deltaTime;
-        controller.Move(input * Time.deltaTime);
+        var collision = controller.Move(input * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("collide");
-        if (collision.gameObject.CompareTag("Ground"))
+        if (hit.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("ground");
             speaker.clip = muffledMusic;
             speaker.time = currTime;
             speaker.Play();
             crowdSFX.Stop();
         }
 
-        if (collision.gameObject.CompareTag("Floor"))
+        if (hit.gameObject.CompareTag("Floor"))
         {
-            Debug.Log("Floor");
             speaker.clip = normalMusic;
             speaker.time = currTime;
             speaker.Play();

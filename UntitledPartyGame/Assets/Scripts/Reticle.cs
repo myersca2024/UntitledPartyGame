@@ -43,7 +43,9 @@ public class Reticle : MonoBehaviour
                 Debug.Log("Throw");
                 holdingSomething = false;
                 transform.DetachChildren();
-                heldItem.GetComponent<Rigidbody>().AddForce((transform.forward + Vector3.up * 0.3f) * throwStrength, ForceMode.VelocityChange);
+                Rigidbody rb = heldItem.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                rb.AddForce((transform.forward + Vector3.up * 0.3f) * throwStrength, ForceMode.VelocityChange);
                 heldItem = null;
             }
         }

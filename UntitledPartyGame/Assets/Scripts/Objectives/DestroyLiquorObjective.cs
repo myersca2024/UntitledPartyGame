@@ -5,6 +5,8 @@ using UnityEngine;
 public class DestroyLiquorObjective : MonoBehaviour
 {
 
+    public int numBottles = 0;
+
     LevelManager lv;
 
     // Start is called before the first frame update
@@ -13,9 +15,17 @@ public class DestroyLiquorObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseBottles()
     {
-        
+        numBottles++;
+    }
+
+    public void DecreaseBottles()
+    {
+        numBottles--;
+        if (numBottles <= 0)
+        {
+            lv.LiquorComplete();
+        }
     }
 }

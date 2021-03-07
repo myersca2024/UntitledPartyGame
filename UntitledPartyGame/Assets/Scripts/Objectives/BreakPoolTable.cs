@@ -12,9 +12,9 @@ public class BreakPoolTable : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("PlayerPunch"))
+        if (other.CompareTag("Throwable") || other.CompareTag("PlayerHitbox"))
         {
             --numHits;
             if (numHits <= 0)

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector3 input;
     Vector3 moveDir;
     float currTime = 0;
+    bool previouslyFloor = true;
     //bool inHouse = false;
     // Start is called before the first frame update
     void Start()
@@ -51,20 +52,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Ground"))
+        if (hit.gameObject.CompareTag("Ground") && previouslyFloor)
         {
             speaker.clip = muffledMusic;
             speaker.time = currTime;
             speaker.Play();
             crowdSFX.Stop();
+            previouslyFloor = false;
         }
 
-        if (hit.gameObject.CompareTag("Floor"))
+        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor)
         {
             speaker.clip = normalMusic;
             speaker.time = currTime;
             speaker.Play();
             crowdSFX.Play();
+            previouslyFloor = true;
         }
     }
 }

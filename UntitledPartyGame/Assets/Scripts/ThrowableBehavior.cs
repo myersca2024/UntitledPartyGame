@@ -16,7 +16,12 @@ public class ThrowableBehavior : MonoBehaviour
 
     void Break()
     {
-        foreach(Transform child in transform)
+        if (gameObject.CompareTag("LiquorBottle"))
+        {
+            FindObjectOfType<DestroyLiquorObjective>().DecreaseBottles();
+        }
+
+        foreach (Transform child in transform)
         {
             child.gameObject.AddComponent<Rigidbody>();
             child.gameObject.AddComponent<BoxCollider>();
@@ -40,7 +45,7 @@ public class ThrowableBehavior : MonoBehaviour
         Debug.Log(rb.velocity.magnitude.ToString());
         if (rb.velocity.magnitude >= speedThreshold)
         {
-            if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable"))
+            if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable") || collision.gameObject.CompareTag("LiquorBottle"))
             {
                 collision.gameObject.GetComponent<ThrowableBehavior>().Break();
             }

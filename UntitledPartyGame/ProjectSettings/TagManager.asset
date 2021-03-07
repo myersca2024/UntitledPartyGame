@@ -11,6 +11,8 @@ TagManager:
   - Hitbox
   - Undefined
   - PlayerHitbox
+  - Bullet
+  - LiquorBottle
   layers:
   - Default
   - TransparentFX

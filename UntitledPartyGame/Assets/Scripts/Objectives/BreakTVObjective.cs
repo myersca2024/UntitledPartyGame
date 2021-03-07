@@ -6,7 +6,7 @@ public class BreakTVObjective : MonoBehaviour
 {
 
     public int numHits = 5;
-
+    public AudioClip breakTVSFX;
     LevelManager lv;
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class BreakTVObjective : MonoBehaviour
         if (numHits <= 0)
         {
             // Add shattered screen?
+            AudioSource.PlayClipAtPoint(breakTVSFX, gameObject.transform.position);
             lv.TVComplete();
         }
     }

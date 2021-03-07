@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakPongTable : MonoBehaviour
 {
     public float speedThreshold = 10f;
+    public AudioClip pongTableBreakSFX;
     LevelManager lv;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class BreakPongTable : MonoBehaviour
         if(gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold)
         {
             //Break table
+            AudioSource.PlayClipAtPoint(pongTableBreakSFX, gameObject.transform.position);
             lv.PongComplete();
         }
     }

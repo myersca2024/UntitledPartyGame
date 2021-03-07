@@ -7,6 +7,7 @@ public class ThrowableBehavior : MonoBehaviour
     public float speedThreshold = 10f;
     public float explosionForce = 100f;
     public float explosionRadius = 5f;
+    public AudioClip breakSFX;
     private Rigidbody rb;
     private DestroyLiquorObjective dlo;
 
@@ -53,6 +54,7 @@ public class ThrowableBehavior : MonoBehaviour
         Debug.Log(rb.velocity.magnitude.ToString());
         if (rb.velocity.magnitude >= speedThreshold)
         {
+            AudioSource.PlayClipAtPoint(breakSFX, transform.position);
             if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable") || collision.gameObject.CompareTag("LiquorBottle"))
             {
                 collision.gameObject.GetComponent<ThrowableBehavior>().Break();

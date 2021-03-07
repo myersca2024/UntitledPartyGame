@@ -66,19 +66,19 @@ MonoBehaviour:
   noiseLevelText: {fileID: 0}
   sliderStartColor: {r: 0, g: 0, b: 1, a: 1}
   sliderWinColor: {r: 1, g: 0, b: 0, a: 1}
-  tvText: Break the TV
-  speakerText: Throw the Speakers Out Of The House
-  djText: Punch the DJ
-  parentsText: Call the Host's Parents
-  poolText: Drain the Pool
+  tvText: Break The TV
+  speakerText: Throw The Speakers Out Of The House
+  djText: Punch The DJ
+  parentsText: Call The Host's Parents
+  poolText: Drain The Pool
   punchText: Spill Punch
-  liquorText: Destroy the Liquor Bottles
-  foodText: Throw all of the food onto the Ground
-  tableText: Break the Pool Table in the Garage
-  pongText: Break the Table Tennis Table
+  liquorText: Destroy The Liquor Bottles
+  foodText: Throw All Of The Food Onto The Floor
+  tableText: Break The Pool Table In The Garage
+  pongText: Break The Table Tennis Table
   fireText: Extinguish Fire Pit
-  hostText: Knock out the Host
-  soloText: Throw out the Red Solo Cups
+  hostText: Knock Out The Host
+  soloText: Throw Out The Red Solo Cups
 --- !u!114 &2289682417046663284
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,12 +21,9 @@ public class DrainPoolObjective : MonoBehaviour
         numHits--;
         if (numHits <= 0)
         {
-<<<<<<< Updated upstream
             AudioSource.PlayClipAtPoint(popSFX, transform.position);
             AudioSource.PlayClipAtPoint(drainSFX, transform.position);
-=======
             AudioSource.PlayClipAtPoint(poolDrainSFX, gameObject.transform.position);
->>>>>>> Stashed changes
             lv.PoolComplete();
         }
     }

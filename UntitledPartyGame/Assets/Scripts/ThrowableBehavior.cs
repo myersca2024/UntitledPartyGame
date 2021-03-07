@@ -7,13 +7,18 @@ public class ThrowableBehavior : MonoBehaviour
     public float speedThreshold = 10f;
     public float explosionForce = 100f;
     public float explosionRadius = 5f;
+    public Reticle reticleScript;
     public AudioClip breakSFX;
     private Rigidbody rb;
     private DestroyLiquorObjective dlo;
 
+    private void Awake()
+    {
+        reticleScript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Reticle>();
+        rb = this.gameObject.GetComponent<Rigidbody>();
+    }
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody>();
         dlo = FindObjectOfType<DestroyLiquorObjective>();
 
         if (gameObject.CompareTag("LiquorBottle"))
@@ -51,8 +56,7 @@ public class ThrowableBehavior : MonoBehaviour
             Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         }
 
-        Debug.Log(rb.velocity.magnitude.ToString());
-        if (rb.velocity.magnitude >= speedThreshold)
+        if (!reticleScript.holdingSomething && rb.velocity.magnitude >= speedThreshold)
         {
             AudioSource.PlayClipAtPoint(breakSFX, transform.position);
             if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable") || collision.gameObject.CompareTag("LiquorBottle"))

@@ -12,6 +12,10 @@ public class LevelManager : MonoBehaviour
     public int sideObjectiveNoiseReduction = 25;
     public int mainObjectiveNoiseReduction = 50;
 
+    public GameObject copPrefab;
+    public Transform spawnPoint;
+    public int numberOfCops = 5;
+
     [Header("UI Elements")]
     public Slider noiseSlider;
     public Text timeToCopsText;
@@ -60,7 +64,7 @@ public class LevelManager : MonoBehaviour
     List<GameObject> partygoers;
     bool chadstorm = false;
     string noiseLevelWinText = "It is quiet enough now.\nReturn home to win!";
-    // Start is called before the first frame update
+
     void Start()
     {
         currentNoiseLevel = startingNoiseLevel;
@@ -80,6 +84,7 @@ public class LevelManager : MonoBehaviour
             if (timer <= 0f)
             {
                 cops = true;
+                SpawnCops();
             }
 
             SetTimeText();
@@ -145,7 +150,8 @@ public class LevelManager : MonoBehaviour
     {
         if (partygoers.Count >= 1 && !chadstorm)
         {
-            Destroy(partygoers[partygoers.Count - 1]);
+            NPCAI npc = partygoers[partygoers.Count - 1].GetComponent<NPCAI>();
+            npc.MakeNPCLeave();
 
             partygoers.RemoveAt(partygoers.Count - 1);
         }
@@ -211,7 +217,16 @@ public class LevelManager : MonoBehaviour
     {
         foreach (GameObject partygoer in partygoers)
         {
-            partygoer.tag = "Chad";
+            NPCAI npc = partygoer.GetComponent<NPCAI>();
+            npc.TurnChad();
+        }
+    }
+
+    private void SpawnCops()
+    {
+        for (int i = 0; i < numberOfCops; i++)
+        {
+            Instantiate(copPrefab, spawnPoint.position, spawnPoint.rotation);
         }
     }
 

@@ -74,6 +74,7 @@ public class NPCAI : MonoBehaviour
     {
         // Create some Chad effect
         isChad = true;
+        this.gameObject.tag = "Chad";
     }
 
     void UpdateIdleState()
@@ -211,6 +212,7 @@ public class NPCAI : MonoBehaviour
                 currentStunTime = stunTime;
             }
             currentState = FSMStates.Stun;
+            TurnChad();
         }
     }
 }

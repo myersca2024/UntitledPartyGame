@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 442018258129676887}
   m_Layer: 0
   m_Name: NPC_Female1
-  m_TagString: Untagged
+  m_TagString: Partygoer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2830567222034783943}
   hitBox: {fileID: 7937633784359822979}
+  chadAttackSFX: {fileID: 0}
 --- !u!1 &2830567222042045669
 GameObject:
   m_ObjectHideFlags: 0

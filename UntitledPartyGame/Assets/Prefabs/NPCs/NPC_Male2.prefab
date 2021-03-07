@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 6540876455816975779}
   m_Layer: 0
   m_Name: NPC_Male2
-  m_TagString: Untagged
+  m_TagString: Partygoer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6540876455809558404}
   hitBox: {fileID: 0}
+  chadAttackSFX: {fileID: 0}
 --- !u!1 &6540876455816975782
 GameObject:
   m_ObjectHideFlags: 0

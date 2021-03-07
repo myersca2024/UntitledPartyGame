@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1881390374}
   m_Layer: 0
   m_Name: NPC_Police
-  m_TagString: Untagged
+  m_TagString: Chad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   player: {fileID: 0}
-  followDistance: 20
+  followDistance: 1000
   attackDistance: 8
   eyes: {fileID: 0}
   fieldOfView: 45

@@ -24,6 +24,11 @@ public class NPCAI : MonoBehaviour
     public bool makeLeave = false;
     public GameObject[] waypoints;
     public float stunTime;
+    public GameObject smokeObject;
+    public Material chadMat;
+    //public GameObject body;
+    public GameObject head;
+    public AudioClip knockoutSFX;
 
     private Vector3 nextDestination;
     private float distanceToPlayer;
@@ -78,7 +83,10 @@ public class NPCAI : MonoBehaviour
 
     public void TurnChad()
     {
-        // Create some Chad effect
+        smokeObject.SetActive(true);
+        head.GetComponent<MeshRenderer>().material = chadMat;
+        //body.GetComponent<MeshRenderer>().material = chadMat;
+
         isChad = true;
         this.gameObject.tag = "Chad";
     }
@@ -213,6 +221,7 @@ public class NPCAI : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerHitbox")
         {
+            AudioSource.PlayClipAtPoint(knockoutSFX, transform.position);
             if (currentStunTime <= 0)
             {
                 currentStunTime = stunTime;

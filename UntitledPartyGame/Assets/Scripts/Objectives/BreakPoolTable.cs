@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakPoolTable : MonoBehaviour
 {
     public int numHits = 5;
+    public AudioClip breakPoolTableSFX;
     LevelManager lv;
     // Start is called before the first frame update
     void Start()
@@ -12,13 +13,14 @@ public class BreakPoolTable : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("PlayerPunch"))
+        if (other.CompareTag("Throwable") || other.CompareTag("PlayerHitbox"))
         {
             --numHits;
             if (numHits <= 0)
             {
+                AudioSource.PlayClipAtPoint(breakPoolTableSFX, Camera.main.transform.position);
                 lv.TableComplete();
             }
         }

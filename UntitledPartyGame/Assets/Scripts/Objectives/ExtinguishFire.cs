@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExtinguishFire : MonoBehaviour
 {
+    public AudioClip extinguishSFX;
     LevelManager lv;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class ExtinguishFire : MonoBehaviour
         if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("PlayerPunch"))
         {
             //Visibly extinguish, sounds
+            AudioSource.PlayClipAtPoint(extinguishSFX, transform.position);
             lv.FireComplete();
         }
     }

@@ -13,9 +13,4 @@ public class DestroyLiquorObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

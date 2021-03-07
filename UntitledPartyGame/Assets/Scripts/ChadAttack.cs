@@ -7,6 +7,7 @@ public class ChadAttack : MonoBehaviour, INPCAttack
     public Animator anim;
     public GameObject hitBox;
     public static bool inMiddleOfAttack = false;
+    public AudioClip chadAttackSFX;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class ChadAttack : MonoBehaviour, INPCAttack
 
     void INPCAttack.Attack()
     {
+        AudioSource.PlayClipAtPoint(chadAttackSFX, transform.position);
         if (!inMiddleOfAttack)
         {
             hitBox.SetActive(true);

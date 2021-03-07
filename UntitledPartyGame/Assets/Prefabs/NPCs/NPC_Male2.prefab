@@ -978,6 +978,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   stunTime: 5
+  knockoutSFX: {fileID: 8300000, guid: 73d25f8adf6462f49b8bdcbc83c5beee, type: 3}
 --- !u!195 &6540876455816975777
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1028,7 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6540876455809558404}
   hitBox: {fileID: 0}
-  chadAttackSFX: {fileID: 0}
+  chadAttackSFX: {fileID: 8300000, guid: bbe033790a20c584197330b29ce72181, type: 3}
 --- !u!1 &6540876455816975782
 GameObject:
   m_ObjectHideFlags: 0

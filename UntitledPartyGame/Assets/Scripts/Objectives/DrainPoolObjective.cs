@@ -5,6 +5,8 @@ using UnityEngine;
 public class DrainPoolObjective : MonoBehaviour
 {
     public int numHits = 8;
+    public AudioClip popSFX;
+    public AudioClip drainSFX;
     LevelManager lv;
 
     // Start is called before the first frame update
@@ -18,7 +20,8 @@ public class DrainPoolObjective : MonoBehaviour
         numHits--;
         if (numHits <= 0)
         {
-            // Add shattered screen?
+            AudioSource.PlayClipAtPoint(popSFX, transform.position);
+            AudioSource.PlayClipAtPoint(drainSFX, transform.position);
             lv.PoolComplete();
         }
     }

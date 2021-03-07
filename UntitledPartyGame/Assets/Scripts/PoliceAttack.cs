@@ -7,6 +7,7 @@ public class PoliceAttack : MonoBehaviour, INPCAttack
     public GameObject bullet;
     public float bulletSpeed;
     public float reloadTime = 1f;
+    public AudioClip gunshotSFX;
 
     private bool canShoot = true;
     private float currentReload;
@@ -29,6 +30,7 @@ public class PoliceAttack : MonoBehaviour, INPCAttack
     {
         if (canShoot)
         {
+            AudioSource.PlayClipAtPoint(gunshotSFX, transform.position);
             GameObject newBullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
             Rigidbody rb = newBullet.GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);

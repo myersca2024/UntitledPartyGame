@@ -15,12 +15,6 @@ public class BreakTVObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         numHits--;

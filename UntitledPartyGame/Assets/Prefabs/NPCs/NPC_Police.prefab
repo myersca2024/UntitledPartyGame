@@ -263,6 +263,7 @@ MonoBehaviour:
   smokeObject: {fileID: 1572054940124918659}
   chadMat: {fileID: 2100000, guid: dcd6ce4f5b9a27e48bd02a0559a7ea22, type: 2}
   head: {fileID: 6069703552754024275}
+  knockoutSFX: {fileID: 8300000, guid: 73d25f8adf6462f49b8bdcbc83c5beee, type: 3}
 --- !u!114 &1881390374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +279,7 @@ MonoBehaviour:
   bullet: {fileID: 3950550503628902510, guid: fe210b286bd33a74f9c0b6bda6fe499c, type: 3}
   bulletSpeed: 40
   reloadTime: 1
+  gunshotSFX: {fileID: 8300000, guid: 8e3e97ed17550574ca78c5e575349252, type: 3}
 --- !u!1 &6069703552754020409
 GameObject:
   m_ObjectHideFlags: 0

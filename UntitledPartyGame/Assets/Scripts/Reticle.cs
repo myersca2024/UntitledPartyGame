@@ -12,6 +12,9 @@ public class Reticle : MonoBehaviour
     public float holdDistance = 1f;
     public Color reticleOnThrowable;
 
+    public AudioClip grabSFX;
+    public AudioClip throwSFX;
+
     GameObject player;
     bool holdingSomething;
     Color originalReticleColor;
@@ -45,6 +48,7 @@ public class Reticle : MonoBehaviour
                 transform.DetachChildren();
                 heldItem.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength, ForceMode.VelocityChange);
                 heldItem = null;
+                AudioSource.PlayClipAtPoint(throwSFX, transform.position);
                 }
             }
         if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
@@ -64,6 +68,7 @@ public class Reticle : MonoBehaviour
                         holdingSomething = true;
                         heldItem = hit.collider.gameObject;
                         heldItem.transform.SetParent(gameObject.transform);
+                        AudioSource.PlayClipAtPoint(grabSFX, transform.position);
                     }
                 }
             }

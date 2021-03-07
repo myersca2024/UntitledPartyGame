@@ -178,6 +178,10 @@ public class NPCAI : MonoBehaviour
                 {
                     currentWaypoint++;
                 }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
@@ -220,6 +224,20 @@ public class NPCAI : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PlayerHitbox")
+        {
+            AudioSource.PlayClipAtPoint(knockoutSFX, transform.position);
+            if (currentStunTime <= 0)
+            {
+                currentStunTime = stunTime;
+            }
+            currentState = FSMStates.Stun;
+            TurnChad();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Throwable")
         {
             AudioSource.PlayClipAtPoint(knockoutSFX, transform.position);
             if (currentStunTime <= 0)

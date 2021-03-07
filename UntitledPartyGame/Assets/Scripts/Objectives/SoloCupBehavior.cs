@@ -16,7 +16,7 @@ public class SoloCupBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Floor"))
         {
             // kill cups?
             sco.DecreaseCups();

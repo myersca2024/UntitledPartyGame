@@ -22,21 +22,21 @@ public class LevelManager : MonoBehaviour
 
     // Strings for each objective
     [Header("Main Objectives")]
-    public string tvText = "Break the TV";
-    public string speakerText = "Throw the Speakers Out Of The House";
-    public string djText = "Punch the DJ";
-    public string parentsText = "Call the Host's Parents";
-    public string poolText = "Drain the Pool";
+    public string tvText = "Break The TV";
+    public string speakerText = "Throw The Speakers Out Of The House";
+    public string djText = "Punch The DJ";
+    public string parentsText = "Call The Host's Parents";
+    public string poolText = "Drain The Pool";
 
     [Header("Side Objectives")]
     public string punchText = "Spill Punch";
-    public string liquorText = "Destroy the Liquor Bottles";
-    public string foodText = "Throw all of the food onto the Ground";
-    public string tableText = "Break the Pool Table in the Garage";
-    public string pongText = "Break the Table Tennis Table";
+    public string liquorText = "Destroy The Liquor Bottles";
+    public string foodText = "Throw All Of The Food Onto The Floor";
+    public string tableText = "Break The Pool Table In The Garage";
+    public string pongText = "Break The Table Tennis Table";
     public string fireText = "Extinguish Fire Pit";
-    public string hostText = "Knock out the Host";
-    public string soloText = "Throw out the Red Solo Cups";
+    public string hostText = "Knock Out The Host";
+    public string soloText = "Throw Out The Red Solo Cups";
 
     // booleans for each objective's completion status
     bool tv;

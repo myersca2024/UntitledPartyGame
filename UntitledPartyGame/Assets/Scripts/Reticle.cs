@@ -18,7 +18,7 @@ public class Reticle : MonoBehaviour
     float currentReload;
     bool isReload = false;
     GameObject player;
-    bool holdingSomething;
+    public bool holdingSomething;
     Color originalReticleColor;
     GameObject heldItem;
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class Reticle : MonoBehaviour
                 isReload = true;
             }
         }
-        else if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
+        else if (Physics.Raycast(transform.position, transform.forward * 0.1f, out hit, grabRange))
         {
             if(hit.collider.CompareTag("Throwable") || hit.collider.CompareTag("LiquorBottle")) 
             {

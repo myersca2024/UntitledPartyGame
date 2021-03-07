@@ -15,11 +15,15 @@ public class BreakPongTable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold)
+        Rigidbody rbTest;
+        if (collision.gameObject.TryGetComponent<Rigidbody>(out rbTest))
         {
-            //Break table
-            AudioSource.PlayClipAtPoint(pongTableBreakSFX, gameObject.transform.position);
-            lv.PongComplete();
+            if (gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold || collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold)
+            {
+                //Break table
+                AudioSource.PlayClipAtPoint(pongTableBreakSFX, gameObject.transform.position);
+                lv.PongComplete();
+            }
         }
     }
 }

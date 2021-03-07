@@ -1172,6 +1172,7 @@ MonoBehaviour:
   smokeObject: {fileID: 888785347}
   chadMat: {fileID: 2100000, guid: dcd6ce4f5b9a27e48bd02a0559a7ea22, type: 2}
   head: {fileID: 5342504237305241617}
+  knockoutSFX: {fileID: 8300000, guid: 73d25f8adf6462f49b8bdcbc83c5beee, type: 3}
 --- !u!195 &6139371329622573849
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1241,7 +1242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 296465637}
   hitBox: {fileID: 616928616}
-  chadAttackSFX: {fileID: 8300000, guid: 69d656046b9858245aad583eaf110b56, type: 3}
+  chadAttackSFX: {fileID: 8300000, guid: bbe033790a20c584197330b29ce72181, type: 3}
 --- !u!1 &5342504237305245551
 GameObject:
   m_ObjectHideFlags: 0

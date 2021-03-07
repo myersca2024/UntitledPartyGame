@@ -14,12 +14,6 @@ public class FoodObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void IncreaseFood()
     {
         numFood++;

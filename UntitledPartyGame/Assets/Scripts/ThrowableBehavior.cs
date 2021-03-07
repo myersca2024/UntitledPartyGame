@@ -4,16 +4,43 @@ using UnityEngine;
 
 public class ThrowableBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speedThreshold = 10f;
+    public float explosionForce = 100f;
+    public float explosionRadius = 5f;
+    private Rigidbody rb;
+    private DestroyLiquorObjective dlo;
+
     void Start()
     {
-        
+        rb = this.gameObject.GetComponent<Rigidbody>();
+        dlo = FindObjectOfType<DestroyLiquorObjective>();
+
+        if (gameObject.CompareTag("LiquorBottle"))
+        {
+            dlo.IncreaseBottles();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Break()
     {
-        
+        if (gameObject.CompareTag("LiquorBottle"))
+        {
+            dlo.DecreaseBottles();
+        }
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.AddComponent<Rigidbody>();
+            child.gameObject.AddComponent<BoxCollider>();
+        }
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, child.position, explosionRadius);
+        }
+
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        Destroy(this.gameObject.GetComponent<Rigidbody>());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,6 +48,16 @@ public class ThrowableBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        }
+
+        Debug.Log(rb.velocity.magnitude.ToString());
+        if (rb.velocity.magnitude >= speedThreshold)
+        {
+            if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable") || collision.gameObject.CompareTag("LiquorBottle"))
+            {
+                collision.gameObject.GetComponent<ThrowableBehavior>().Break();
+            }
+            Break();
         }
     }
 }

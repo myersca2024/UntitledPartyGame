@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
             SetTimeText();
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && !tv)
+/*        if (Input.GetKeyDown(KeyCode.T) && !tv)
         {
             TVComplete();
             //MainObjectiveComplete();
@@ -105,7 +105,7 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !solo)
         {
             SoloComplete();
-        }
+        }*/
     }
 
     public void ReduceNoiseLevel(int amount)
@@ -219,92 +219,131 @@ public class LevelManager : MonoBehaviour
 
     public void TVComplete()
     {
-        tv = true;
-        tvText = ObjectiveTextComplete(tvText);
-        MainObjectiveComplete();
+        if (!tv)
+        {
+            tv = true;
+            tvText = ObjectiveTextComplete(tvText);
+            MainObjectiveComplete();
+        }
     }
 
     public void SpeakerComplete()
     {
-        speaker = true;
-        speakerText = ObjectiveTextComplete(speakerText);
-        MainObjectiveComplete();
+        if (!speaker)
+        {
+            speaker = true;
+            speakerText = ObjectiveTextComplete(speakerText);
+            MainObjectiveComplete();
+        }
     }
 
     public void DJComplete()
     {
-        dj = true;
-        djText = ObjectiveTextComplete(djText);
-        MainObjectiveComplete();
+        if (!dj)
+        {
+            dj = true;
+            djText = ObjectiveTextComplete(djText);
+            MainObjectiveComplete();
+        }
     }
 
     public void ParentsComplete()
     {
-        parents = true;
-        parentsText = ObjectiveTextComplete(parentsText);
-        MainObjectiveComplete();
+        if (!parents)
+        {
+            parents = true;
+            parentsText = ObjectiveTextComplete(parentsText);
+            MainObjectiveComplete();
+        }
     }
 
     public void PoolComplete()
     {
-        pool = true;
-        poolText = ObjectiveTextComplete(poolText);
-        MainObjectiveComplete();
+        if (!pool)
+        {
+            pool = true;
+            poolText = ObjectiveTextComplete(poolText);
+            MainObjectiveComplete();
+        }
     }
 
     public void PunchComplete()
     {
-        punch = true;
-        punchText = ObjectiveTextComplete(punchText);
-        SideObjectiveComplete();
+        if (!punch)
+        {
+            punch = true;
+            punchText = ObjectiveTextComplete(punchText);
+            SideObjectiveComplete();
+        }
     }
 
     public void LiquorComplete()
     {
-        liquor = true;
-        liquorText = ObjectiveTextComplete(liquorText);
-        SideObjectiveComplete();
+        if (!liquor)
+        {
+            liquor = true;
+            liquorText = ObjectiveTextComplete(liquorText);
+            SideObjectiveComplete();
+        }
     }
 
     public void FoodComplete()
     {
-        food = true;
-        foodText = ObjectiveTextComplete(foodText);
-        SideObjectiveComplete();
+        if (!food)
+        {
+            food = true;
+            foodText = ObjectiveTextComplete(foodText);
+            SideObjectiveComplete();
+        }
     }
 
     public void TableComplete()
     {
-        table = true;
-        tableText = ObjectiveTextComplete(tableText);
-        SideObjectiveComplete();
+        if (!table)
+        {
+            table = true;
+            tableText = ObjectiveTextComplete(tableText);
+            SideObjectiveComplete();
+        }
     }
 
     public void PongComplete()
     {
-        pong = true;
-        pongText = ObjectiveTextComplete(pongText);
-        SideObjectiveComplete();
+        if (!pong)
+        {
+            pong = true;
+            pongText = ObjectiveTextComplete(pongText);
+            SideObjectiveComplete();
+        }
     }
 
     public void FireComplete()
     {
-        fire = true;
-        fireText = ObjectiveTextComplete(fireText);
-        SideObjectiveComplete();
+        if (!fire)
+        {
+            fire = true;
+            fireText = ObjectiveTextComplete(fireText);
+            SideObjectiveComplete();
+        }
     }
 
     public void HostComplete()
     {
-        host = true;
-        hostText = ObjectiveTextComplete(hostText);
-        SideObjectiveComplete();
+        if (!host)
+        {
+            host = true;
+            hostText = ObjectiveTextComplete(hostText);
+            SideObjectiveComplete();
+        }
     }
 
     public void SoloComplete()
     {
-        solo = true;
-        soloText = ObjectiveTextComplete(soloText);
-        SideObjectiveComplete();
+        if (!solo)
+        {
+            solo = true;
+            soloText = ObjectiveTextComplete(soloText);
+            SideObjectiveComplete();
+        }
     }
 }

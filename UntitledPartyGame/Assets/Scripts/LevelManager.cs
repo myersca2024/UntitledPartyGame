@@ -217,91 +217,91 @@ public class LevelManager : MonoBehaviour
 
     // Helper Methods to denote the completion of each objective, both main and side
 
-    private void TVComplete()
+    public void TVComplete()
     {
         tv = true;
         tvText = ObjectiveTextComplete(tvText);
         MainObjectiveComplete();
     }
 
-    private void SpeakerComplete()
+    public void SpeakerComplete()
     {
         speaker = true;
         speakerText = ObjectiveTextComplete(speakerText);
         MainObjectiveComplete();
     }
 
-    private void DJComplete()
+    public void DJComplete()
     {
         dj = true;
         djText = ObjectiveTextComplete(djText);
         MainObjectiveComplete();
     }
 
-    private void ParentsComplete()
+    public void ParentsComplete()
     {
         parents = true;
         parentsText = ObjectiveTextComplete(parentsText);
         MainObjectiveComplete();
     }
 
-    private void PoolComplete()
+    public void PoolComplete()
     {
         pool = true;
         poolText = ObjectiveTextComplete(poolText);
         MainObjectiveComplete();
     }
 
-    private void PunchComplete()
+    public void PunchComplete()
     {
         punch = true;
         punchText = ObjectiveTextComplete(punchText);
         SideObjectiveComplete();
     }
 
-    private void LiquorComplete()
+    public void LiquorComplete()
     {
         liquor = true;
         liquorText = ObjectiveTextComplete(liquorText);
         SideObjectiveComplete();
     }
 
-    private void FoodComplete()
+    public void FoodComplete()
     {
         food = true;
         foodText = ObjectiveTextComplete(foodText);
         SideObjectiveComplete();
     }
 
-    private void TableComplete()
+    public void TableComplete()
     {
         table = true;
         tableText = ObjectiveTextComplete(tableText);
         SideObjectiveComplete();
     }
 
-    private void PongComplete()
+    public void PongComplete()
     {
         pong = true;
         pongText = ObjectiveTextComplete(pongText);
         SideObjectiveComplete();
     }
 
-    private void FireComplete()
+    public void FireComplete()
     {
         fire = true;
         fireText = ObjectiveTextComplete(fireText);
         SideObjectiveComplete();
     }
 
-    private void HostComplete()
+    public void HostComplete()
     {
         host = true;
         hostText = ObjectiveTextComplete(hostText);
         SideObjectiveComplete();
     }
 
-    private void SoloComplete()
+    public void SoloComplete()
     {
         solo = true;
         soloText = ObjectiveTextComplete(soloText);

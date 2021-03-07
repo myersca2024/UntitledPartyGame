@@ -62,7 +62,7 @@ public class Reticle : MonoBehaviour
         }
         else if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
         {
-            if(hit.collider.CompareTag("Throwable")) 
+            if(hit.collider.CompareTag("Throwable") || hit.collider.CompareTag("LiquorBottle")) 
             {
                 reticleImage.color = reticleOnThrowable;
                 if (Input.GetMouseButtonDown(1) && currentReload <= 0f) //On right click...

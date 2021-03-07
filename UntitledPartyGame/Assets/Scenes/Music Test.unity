@@ -192,6 +192,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 6486115103531041243, guid: 2adbcceb988df214e97c182343309248,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486115103531041243, guid: 2adbcceb988df214e97c182343309248,
+        type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6486115103531041244, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
       propertyPath: normalMusic
@@ -602,7 +612,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b88f136bb097c44da63e9047bf40525, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

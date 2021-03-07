@@ -9,8 +9,8 @@ TagManager:
   - Throwable
   - Waypoint
   - Hitbox
-  - PlayerPunch
-  - Bullet
+  - Undefined
+  - PlayerHitbox
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class PlayerPunch : MonoBehaviour
     public Animator anim;
     public GameObject hitbox;
     public int hitboxDuration = 60;
+    public AudioClip punchSFX;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class PlayerPunch : MonoBehaviour
         {
             anim.SetInteger("animState", 2);
             hitbox.SetActive(true);
+            AudioSource.PlayClipAtPoint(punchSFX, Camera.main.transform.position);
         }
         if(hitbox.activeSelf)
         {

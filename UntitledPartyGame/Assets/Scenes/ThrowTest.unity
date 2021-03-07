@@ -1315,6 +1315,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
         type: 3}
+      propertyPath: grabSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aa7a090548059d42b79775cb852e2e8, type: 3}
+    - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
+        type: 3}
+      propertyPath: throwSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 062115fb583905c4a8e78d49e93d6377, type: 3}
+    - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
+        type: 3}
       propertyPath: grabRange
       value: 5
       objectReference: {fileID: 0}

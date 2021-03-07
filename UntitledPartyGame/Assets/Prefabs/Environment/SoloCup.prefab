@@ -932,9 +932,11 @@ GameObject:
   - component: {fileID: 7787446055498796563}
   - component: {fileID: 5491745792926363054}
   - component: {fileID: 1788237242768372986}
+  - component: {fileID: 1034274550386596959}
+  - component: {fileID: 4898413831941281008}
   m_Layer: 0
   m_Name: SoloCup
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,6 +987,35 @@ MonoBehaviour:
   speedThreshold: 10
   explosionForce: 100
   explosionRadius: 5
+--- !u!65 &1034274550386596959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208997563429248368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22895813, y: 0.21011353, z: 0.23674011}
+  m_Center: {x: 0.0049209595, y: 0.05832672, z: 0.026655197}
+--- !u!54 &4898413831941281008
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208997563429248368}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6788457480475107172
 GameObject:
   m_ObjectHideFlags: 0

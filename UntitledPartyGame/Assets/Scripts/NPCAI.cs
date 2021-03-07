@@ -94,6 +94,7 @@ public class NPCAI : MonoBehaviour
         FaceTarget(player.transform.position);
         nav.SetDestination(player.transform.position);
 
+        Debug.Log(distanceToPlayer.ToString());
         if (distanceToPlayer <= attackDistance)
         {
             currentState = FSMStates.Attack;
@@ -109,6 +110,7 @@ public class NPCAI : MonoBehaviour
     {
         nav.stoppingDistance = attackDistance;
 
+        Debug.Log(distanceToPlayer.ToString());
         if (distanceToPlayer > attackDistance)
         {
             currentState = FSMStates.Follow;

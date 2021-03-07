@@ -16,7 +16,12 @@ public class ThrowableBehavior : MonoBehaviour
 
     void Break()
     {
-        foreach(Transform child in transform)
+        if (gameObject.CompareTag("LiquorBottle"))
+        {
+            FindObjectOfType<DestroyLiquorObjective>().DecreaseBottles();
+        }
+
+        foreach (Transform child in transform)
         {
             child.gameObject.AddComponent<Rigidbody>();
             child.gameObject.AddComponent<BoxCollider>();

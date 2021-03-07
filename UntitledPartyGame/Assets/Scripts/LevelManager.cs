@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
             SetTimeText();
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && !tv)
+/*        if (Input.GetKeyDown(KeyCode.T) && !tv)
         {
             TVComplete();
             //MainObjectiveComplete();
@@ -105,7 +105,7 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !solo)
         {
             SoloComplete();
-        }
+        }*/
     }
 
     public void ReduceNoiseLevel(int amount)

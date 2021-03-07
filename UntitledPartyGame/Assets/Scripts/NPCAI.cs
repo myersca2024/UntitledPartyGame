@@ -35,10 +35,16 @@ public class NPCAI : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = this.GetComponent<Animator>();
         nav = this.GetComponent<NavMeshAgent>();
         attackMethod = this.GetComponent<INPCAttack>();
         currentStunTime = stunTime;
+
+        if (isChad)
+        {
+            TurnChad();
+        }
     }
 
     void Update()

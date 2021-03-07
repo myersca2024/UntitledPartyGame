@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  player: {fileID: 0}
+  player: {fileID: 850840983808943525, guid: 2adbcceb988df214e97c182343309248, type: 3}
   followDistance: 10
   attackDistance: 2
   eyes: {fileID: 961396267}

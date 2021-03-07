@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004854987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.045, y: 1.22, z: -0.073}
+  m_LocalPosition: {x: 0.011, y: 1.22, z: -0.073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850840983808588229}
@@ -846,11 +846,9 @@ GameObject:
   m_Component:
   - component: {fileID: 850840983808588229}
   - component: {fileID: 4749793550977482283}
-  - component: {fileID: 6486115103531041239}
   - component: {fileID: 6486115103531041244}
   - component: {fileID: 6486115103531041243}
   - component: {fileID: 3927664963758892177}
-  - component: {fileID: 3927664963758892186}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Player
@@ -888,28 +886,12 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e79c578658c9be94a999ce47340a938f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6486115103531041239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850840983808943525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0526ed43796e0a438bf44d37ea5499c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 4749793550977482283}
-  hitbox: {fileID: 4749793550250155942}
-  hitboxDuration: 30
-  punchSFX: {fileID: 0}
 --- !u!114 &6486115103531041244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c259fe22c3908c44fb94cb5c8c9f0aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 10
+  playerSpeed: 5
   gravity: 9.81
 --- !u!143 &6486115103531041243
 CharacterController:
@@ -935,7 +917,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1.5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -958,20 +940,6 @@ MonoBehaviour:
   hitbox: {fileID: 4749793550250155942}
   hitboxDuration: 30
   punchSFX: {fileID: 8300000, guid: a9f9ebf032670be4ab079c8103acf052, type: 3}
---- !u!114 &3927664963758892186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850840983808943525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c259fe22c3908c44fb94cb5c8c9f0aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 10
-  gravity: 9.81
 --- !u!1 &850840983808943531
 GameObject:
   m_ObjectHideFlags: 0

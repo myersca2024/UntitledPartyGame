@@ -62,6 +62,7 @@ public class LevelManager : MonoBehaviour
     float timer;
     bool cops = false;
     List<GameObject> partygoers;
+    bool haveSpawned = false;
     bool chadstorm = false;
     string noiseLevelWinText = "It is quiet enough now.\nReturn home to win!";
 
@@ -84,7 +85,11 @@ public class LevelManager : MonoBehaviour
             if (timer <= 0f)
             {
                 cops = true;
-                SpawnCops();
+
+                if (!haveSpawned)
+                {
+                    SpawnCops();
+                }
             }
 
             SetTimeText();
@@ -224,10 +229,18 @@ public class LevelManager : MonoBehaviour
 
     private void SpawnCops()
     {
+        float x = 1f;
         for (int i = 0; i < numberOfCops; i++)
         {
-            Instantiate(copPrefab, spawnPoint.position, spawnPoint.rotation);
+            Invoke("SpawnACop", x);
+            x += 1f;
         }
+        haveSpawned = true;
+    }
+    
+    private void SpawnACop()
+    {
+        Instantiate(copPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 
     // Helper Methods to denote the completion of each objective, both main and side

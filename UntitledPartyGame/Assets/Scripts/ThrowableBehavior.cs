@@ -27,7 +27,8 @@ public class ThrowableBehavior : MonoBehaviour
             child.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, child.position, explosionRadius);
         }
 
-        this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        Destroy(this.gameObject.GetComponent<Rigidbody>());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +41,7 @@ public class ThrowableBehavior : MonoBehaviour
         Debug.Log(rb.velocity.magnitude.ToString());
         if (rb.velocity.magnitude >= speedThreshold)
         {
-            if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable"))
+            if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("Breakable") || collision.gameObject.CompareTag("LiquorBottle"))
             {
                 collision.gameObject.GetComponent<ThrowableBehavior>().Break();
             }

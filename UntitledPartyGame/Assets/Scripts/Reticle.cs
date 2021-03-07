@@ -12,6 +12,9 @@ public class Reticle : MonoBehaviour
     public float holdDistance = 1f;
     public Color reticleOnThrowable;
 
+    float reload = 0.2f;
+    float currentReload;
+    bool isReload = false;
     GameObject player;
     bool holdingSomething;
     Color originalReticleColor;
@@ -22,11 +25,16 @@ public class Reticle : MonoBehaviour
         originalReticleColor = reticleImage.color;
         holdingSomething = false;
         player = GameObject.FindGameObjectWithTag("Player");
+        currentReload = 0f;
     }
 
     // Update is called once per frame 
     void Update()
     {
+        if (isReload)
+        {
+            currentReload -= Time.deltaTime;
+        }
         HandleGrab();
     }
 
@@ -38,7 +46,7 @@ public class Reticle : MonoBehaviour
             //Debug.Log("Holding");
             heldItem.transform.localPosition = new Vector3(0, 0, holdDistance);
             heldItem.transform.rotation = transform.rotation;
-            if (Input.GetMouseButtonDown(1)) //I apparently can't have this in the if Raycast, despite the object literally being right in your face
+            if (Input.GetMouseButtonDown(1) && currentReload <= 0f) //I apparently can't have this in the if Raycast, despite the object literally being right in your face
             {
                 Debug.Log("Throw");
                 holdingSomething = false;
@@ -47,14 +55,17 @@ public class Reticle : MonoBehaviour
                 rb.velocity = Vector3.zero;
                 rb.AddForce((transform.forward + Vector3.up * 0.3f) * throwStrength, ForceMode.VelocityChange);
                 heldItem = null;
+
+                currentReload = reload;
+                isReload = true;
             }
         }
         else if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
         {
-            if(hit.collider.CompareTag("Throwable"))
+            if(hit.collider.CompareTag("Throwable")) 
             {
                 reticleImage.color = reticleOnThrowable;
-                if (Input.GetMouseButtonDown(1)) //On right click...
+                if (Input.GetMouseButtonDown(1) && currentReload <= 0f) //On right click...
                 {
                     if(holdingSomething)
                     {
@@ -66,6 +77,9 @@ public class Reticle : MonoBehaviour
                         holdingSomething = true;
                         heldItem = hit.collider.gameObject;
                         heldItem.transform.SetParent(gameObject.transform);
+
+                        currentReload = reload;
+                        isReload = true;
                     }
                 }
             }

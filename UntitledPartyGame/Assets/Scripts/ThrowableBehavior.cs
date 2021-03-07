@@ -8,17 +8,24 @@ public class ThrowableBehavior : MonoBehaviour
     public float explosionForce = 100f;
     public float explosionRadius = 5f;
     private Rigidbody rb;
+    private DestroyLiquorObjective dlo;
 
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
+        dlo = FindObjectOfType<DestroyLiquorObjective>();
+
+        if (gameObject.CompareTag("LiquorBottle"))
+        {
+            dlo.IncreaseBottles();
+        }
     }
 
     void Break()
     {
         if (gameObject.CompareTag("LiquorBottle"))
         {
-            FindObjectOfType<DestroyLiquorObjective>().DecreaseBottles();
+            dlo.DecreaseBottles();
         }
 
         foreach (Transform child in transform)

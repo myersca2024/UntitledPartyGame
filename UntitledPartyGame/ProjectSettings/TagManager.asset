@@ -15,6 +15,7 @@ TagManager:
   - LiquorBottle
   - Ground
   - Floor
+  - Breakable
   layers:
   - Default
   - TransparentFX

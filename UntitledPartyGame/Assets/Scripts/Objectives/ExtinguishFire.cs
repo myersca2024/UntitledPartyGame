@@ -6,6 +6,7 @@ public class ExtinguishFire : MonoBehaviour
 {
     public AudioClip extinguishSFX;
     LevelManager lv;
+    public AudioClip extinguishSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,11 @@ public class ExtinguishFire : MonoBehaviour
         if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("PlayerPunch"))
         {
             //Visibly extinguish, sounds
+<<<<<<< Updated upstream
             AudioSource.PlayClipAtPoint(extinguishSFX, transform.position);
+=======
+            AudioSource.PlayClipAtPoint(extinguishSFX, gameObject.transform.position);
+>>>>>>> Stashed changes
             lv.FireComplete();
         }
     }

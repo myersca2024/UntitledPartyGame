@@ -556,7 +556,11 @@ PrefabInstance:
     - target: {fileID: 1855154269, guid: 33ff62608c06d5242b8d29a600319c73, type: 3}
       propertyPath: chadAttackSFX
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 8300000, guid: a9f9ebf032670be4ab079c8103acf052, type: 3}
+=======
+      objectReference: {fileID: 8300000, guid: 69d656046b9858245aad583eaf110b56, type: 3}
+>>>>>>> Stashed changes
     - target: {fileID: 1675818716435286706, guid: 33ff62608c06d5242b8d29a600319c73,
         type: 3}
       propertyPath: isChad
@@ -709,3 +713,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adbcceb988df214e97c182343309248, type: 3}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &6486115103531041238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 850840983808943525, guid: 2adbcceb988df214e97c182343309248,
+    type: 3}
+  m_PrefabInstance: {fileID: 5894512690311013491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6486115103531041239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486115103531041238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0526ed43796e0a438bf44d37ea5499c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1163947536133724760}
+  hitbox: {fileID: 1163947536883334101}
+  hitboxDuration: 30
+  punchSFX: {fileID: 0}
+--- !u!4 &6486115103531041242 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 850840983808588229, guid: 2adbcceb988df214e97c182343309248,
+    type: 3}
+  m_PrefabInstance: {fileID: 5894512690311013491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &6486115103531041243
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486115103531041238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &6486115103531041244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486115103531041238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c259fe22c3908c44fb94cb5c8c9f0aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 10
+  gravity: 9.81
+>>>>>>> Stashed changes

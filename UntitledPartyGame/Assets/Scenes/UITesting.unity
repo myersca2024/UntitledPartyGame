@@ -13562,6 +13562,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2289682417046663286, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: pongTableBreakSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 2946f481d963cc246826f18a08067cc5, type: 3}
     - target: {fileID: 2289682417046663290, guid: 42783eb9a2f7237459473cdd5180c383,
         type: 3}
       propertyPath: m_Name

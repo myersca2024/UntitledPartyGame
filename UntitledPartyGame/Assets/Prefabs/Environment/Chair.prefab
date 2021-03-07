@@ -544,6 +544,7 @@ MonoBehaviour:
   speedThreshold: 10
   explosionForce: 100
   explosionRadius: 5
+  breakSFX: {fileID: 8300000, guid: 2946f481d963cc246826f18a08067cc5, type: 3}
 --- !u!65 &6425054923892776465
 BoxCollider:
   m_ObjectHideFlags: 0

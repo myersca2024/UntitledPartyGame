@@ -108,7 +108,7 @@ public class LevelManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && !punch)
         {
-            PunchComplete();
+            PongComplete();
             //SideObjectiveComplete();
         }
 

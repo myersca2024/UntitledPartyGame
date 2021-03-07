@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnockoutHost : MonoBehaviour
 {
     LevelManager lv;
+    public AudioClip koSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class KnockoutHost : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerPunch"))
         {
             //KO the character
+            AudioSource.PlayClipAtPoint(koSFX, gameObject.transform.position);
             lv.HostComplete();
         }
     }

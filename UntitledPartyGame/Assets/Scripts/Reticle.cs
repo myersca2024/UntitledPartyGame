@@ -11,6 +11,8 @@ public class Reticle : MonoBehaviour
     public float grabRange = 3f;
     public float holdDistance = 1f;
     public Color reticleOnThrowable;
+    public AudioClip grabSFX;
+    public AudioClip throwSFX;
 
     float reload = 0.2f;
     float currentReload;
@@ -49,6 +51,7 @@ public class Reticle : MonoBehaviour
             if (Input.GetMouseButtonDown(1) && currentReload <= 0f) //I apparently can't have this in the if Raycast, despite the object literally being right in your face
             {
                 Debug.Log("Throw");
+                AudioSource.PlayClipAtPoint(throwSFX, transform.position);
                 holdingSomething = false;
                 transform.DetachChildren();
                 Rigidbody rb = heldItem.GetComponent<Rigidbody>();
@@ -74,6 +77,7 @@ public class Reticle : MonoBehaviour
                     else
                     {
                         Debug.Log("Grab");
+                        AudioSource.PlayClipAtPoint(grabSFX, transform.position);
                         holdingSomething = true;
                         heldItem = hit.collider.gameObject;
                         heldItem.transform.SetParent(gameObject.transform);

@@ -549,6 +549,8 @@ MonoBehaviour:
   grabRange: 3
   holdDistance: 1
   reticleOnThrowable: {r: 0, g: 0, b: 0, a: 0}
+  grabSFX: {fileID: 0}
+  throwSFX: {fileID: 0}
 --- !u!114 &1004854992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855154269, guid: 33ff62608c06d5242b8d29a600319c73, type: 3}
+      propertyPath: chadAttackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: a9f9ebf032670be4ab079c8103acf052, type: 3}
     - target: {fileID: 1675818716435286706, guid: 33ff62608c06d5242b8d29a600319c73,
         type: 3}
       propertyPath: isChad
@@ -767,17 +773,17 @@ PrefabInstance:
     - target: {fileID: 850840983808587879, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.119
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 850840983808587879, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.713
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 850840983808587879, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.335
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 850840983808588229, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
@@ -837,7 +843,7 @@ PrefabInstance:
     - target: {fileID: 850840983808943175, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 850840983808943525, guid: 2adbcceb988df214e97c182343309248,
         type: 3}
@@ -913,6 +919,7 @@ MonoBehaviour:
   anim: {fileID: 1163947536133724760}
   hitbox: {fileID: 1163947536883334101}
   hitboxDuration: 30
+  punchSFX: {fileID: 8300000, guid: a9f9ebf032670be4ab079c8103acf052, type: 3}
 --- !u!4 &6486115103531041242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 850840983808588229, guid: 2adbcceb988df214e97c182343309248,

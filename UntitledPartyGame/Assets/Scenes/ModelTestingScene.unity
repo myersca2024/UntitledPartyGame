@@ -2313,6 +2313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1855154269, guid: 33ff62608c06d5242b8d29a600319c73, type: 3}
+      propertyPath: chadAttackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 69d656046b9858245aad583eaf110b56, type: 3}
     - target: {fileID: 1675818716435286706, guid: 33ff62608c06d5242b8d29a600319c73,
         type: 3}
       propertyPath: player

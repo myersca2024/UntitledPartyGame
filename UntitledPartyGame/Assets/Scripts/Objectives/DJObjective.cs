@@ -13,9 +13,9 @@ public class DJObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("PlayerPunch"))
+        if (other.CompareTag("PlayerHitbox"))
         {
             lv.DJComplete();
         }

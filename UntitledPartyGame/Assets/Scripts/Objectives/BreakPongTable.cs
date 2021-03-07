@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DJObjective : MonoBehaviour
+public class BreakPongTable : MonoBehaviour
 {
-
+    public float speedThreshold = 10f;
     LevelManager lv;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +14,10 @@ public class DJObjective : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerPunch"))
+        if(gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold)
         {
-            lv.DJComplete();
+            //Break table
+            lv.PongComplete();
         }
     }
 }

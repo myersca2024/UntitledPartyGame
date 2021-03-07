@@ -13,12 +13,6 @@ public class CallParentsObjective : MonoBehaviour
         lv = FindObjectOfType<LevelManager>();   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

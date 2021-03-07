@@ -35,10 +35,16 @@ public class NPCAI : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = this.GetComponent<Animator>();
         nav = this.GetComponent<NavMeshAgent>();
         attackMethod = this.GetComponent<INPCAttack>();
         currentStunTime = stunTime;
+
+        if (isChad)
+        {
+            TurnChad();
+        }
     }
 
     void Update()
@@ -74,6 +80,7 @@ public class NPCAI : MonoBehaviour
     {
         // Create some Chad effect
         isChad = true;
+        this.gameObject.tag = "Chad";
     }
 
     void UpdateIdleState()
@@ -211,6 +218,7 @@ public class NPCAI : MonoBehaviour
                 currentStunTime = stunTime;
             }
             currentState = FSMStates.Stun;
+            TurnChad();
         }
     }
 }

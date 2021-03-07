@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2586938825318517572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4835576646109334022}
+  m_Layer: 0
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4835576646109334022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586938825318517572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.288, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2830567222041751685}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2830567222042043281
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2830567222042043375}
   m_LocalRotation: {x: -0.70710737, y: 0.00000050576176, z: 0.00000050576256, w: 0.70710623}
-  m_LocalPosition: {x: -2.0610447, y: 1.2357106, z: 0.0573799}
+  m_LocalPosition: {x: 0.012, y: 1.236, z: 0.342}
   m_LocalScale: {x: 0.8398975, y: 0.8398975, z: 0.83989763}
   m_Children: []
   m_Father: {fileID: 2830567222041751681}
@@ -343,7 +373,7 @@ GameObject:
   - component: {fileID: 442018258129676887}
   m_Layer: 0
   m_Name: NPC_Female1
-  m_TagString: Untagged
+  m_TagString: Partygoer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,10 +443,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  player: {fileID: 0}
+  player: {fileID: 850840983808943525, guid: 2adbcceb988df214e97c182343309248, type: 3}
   followDistance: 10
   attackDistance: 2
-  eyes: {fileID: 0}
+  eyes: {fileID: 4835576646109334022}
   fieldOfView: 45
   isChad: 0
   makeLeave: 0
@@ -476,6 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2830567222034783943}
   hitBox: {fileID: 7937633784359822979}
+  chadAttackSFX: {fileID: 0}
 --- !u!1 &2830567222042045669
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2830567222041753473}
+  - {fileID: 4835576646109334022}
   m_Father: {fileID: 2830567222041751843}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

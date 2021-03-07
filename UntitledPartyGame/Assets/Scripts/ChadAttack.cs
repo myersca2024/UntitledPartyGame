@@ -16,7 +16,6 @@ public class ChadAttack : MonoBehaviour, INPCAttack
 
     void INPCAttack.Attack()
     {
-        AudioSource.PlayClipAtPoint(chadAttackSFX, transform.position);
         if (!inMiddleOfAttack)
         {
             hitBox.SetActive(true);
@@ -27,6 +26,7 @@ public class ChadAttack : MonoBehaviour, INPCAttack
     }
     void DeactivateHitbox()
     {
+        AudioSource.PlayClipAtPoint(chadAttackSFX, transform.position);
         hitBox.SetActive(false);
         inMiddleOfAttack = false;
         Debug.Log("Hitbox deactivated");

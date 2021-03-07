@@ -43,11 +43,11 @@ public class Reticle : MonoBehaviour
                 Debug.Log("Throw");
                 holdingSomething = false;
                 transform.DetachChildren();
-                heldItem.GetComponent<Rigidbody>().AddForce(transform.forward * throwStrength, ForceMode.VelocityChange);
+                heldItem.GetComponent<Rigidbody>().AddForce((transform.forward + Vector3.up * 0.3f) * throwStrength, ForceMode.VelocityChange);
                 heldItem = null;
-                }
             }
-        if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
+        }
+        else if (Physics.Raycast(transform.position, transform.forward, out hit, grabRange))
         {
             if(hit.collider.CompareTag("Throwable"))
             {

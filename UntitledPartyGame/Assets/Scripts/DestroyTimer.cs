@@ -13,10 +13,6 @@ public class DestroyTimer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Hit player!");
-        }
         Destroy(gameObject);
     }
 }

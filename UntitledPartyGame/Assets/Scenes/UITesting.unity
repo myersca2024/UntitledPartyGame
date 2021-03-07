@@ -1751,182 +1751,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &582219490
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 582219491}
-  - component: {fileID: 582219492}
-  - component: {fileID: 582219500}
-  - component: {fileID: 582219499}
-  - component: {fileID: 582219498}
-  - component: {fileID: 582219497}
-  - component: {fileID: 582219496}
-  - component: {fileID: 582219495}
-  - component: {fileID: 582219494}
-  - component: {fileID: 582219493}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &582219491
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.1924, y: 227.3074, z: -3.8754566}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &582219492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6906b483e4796d747a3a695f4890be6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingNoiseLevel: 200
-  winNoiseThreshold: 100
-  timeToCops: 400
-  sideObjectiveNoiseReduction: 25
-  mainObjectiveNoiseReduction: 50
-  noiseSlider: {fileID: 1298722685}
-  timeToCopsText: {fileID: 963200260}
-  objectiveText: {fileID: 758231469}
-  noiseLevelText: {fileID: 995267343}
-  sliderStartColor: {r: 0, g: 0, b: 1, a: 1}
-  sliderWinColor: {r: 1, g: 0, b: 0, a: 1}
-  tvText: Break the TV
-  speakerText: Throw the Speakers Out Of The House
-  djText: Punch the DJ
-  parentsText: Call the Host's Parents
-  poolText: Drain the Pool
-  punchText: Spill Punch
-  liquorText: Destroy the Liquor Bottles
-  foodText: Throw all of the food onto the Ground
-  tableText: Break the Pool Table in the Garage
-  pongText: Break the Table Tennis Table
-  fireText: Extinguish Fire Pit
-  hostText: Knock out the Host
-  soloText: Throw out the Red Solo Cups
---- !u!114 &582219493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9224c8d8cf73d984baf9a527e6a3e4eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &582219494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e38307174eb7e14f898a90701cf8db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numSpeakers: 0
---- !u!114 &582219495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 571b8b5fd068c834d93bb8895dc20ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numCups: 0
---- !u!114 &582219496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9b19ad2b7970db43b538f0f41b2a6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numFood: 0
---- !u!114 &582219497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d6f0b655f0859447a3b829ff8dd72ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numHits: 8
---- !u!114 &582219498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7542dfb1479c8894f8ff0c4a2f41252a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &582219499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2076b6e1ef8538f40b8ef55608313428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numBottles: 0
---- !u!114 &582219500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582219490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20724786eb63e3c4b802ea20cdebcd40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &583729336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5030,6 +4854,95 @@ PrefabInstance:
       objectReference: {fileID: 491117256}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b72e383bcb2c44f8ba96738844b344, type: 3}
+--- !u!1001 &2289682416538076824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2289682417046663290, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 92.1924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 227.3074
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.8754566
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663291, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289682417046663292, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: noiseSlider
+      value: 
+      objectReference: {fileID: 1298722685}
+    - target: {fileID: 2289682417046663292, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: objectiveText
+      value: 
+      objectReference: {fileID: 758231469}
+    - target: {fileID: 2289682417046663292, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: noiseLevelText
+      value: 
+      objectReference: {fileID: 995267343}
+    - target: {fileID: 2289682417046663292, guid: 42783eb9a2f7237459473cdd5180c383,
+        type: 3}
+      propertyPath: timeToCopsText
+      value: 
+      objectReference: {fileID: 963200260}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42783eb9a2f7237459473cdd5180c383, type: 3}
 --- !u!1001 &5208377852193172809
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 10f;
     public float gravity = 9.81f;
     public GameObject speakerObject;
-    
+    public bool speakersDestroyed = false;
     public AudioClip muffledMusic;
     public AudioClip normalMusic;
 
@@ -52,22 +52,36 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Ground") && previouslyFloor)
+        if (hit.gameObject.CompareTag("Ground") && previouslyFloor && !speakersDestroyed)
         {
             speaker.clip = muffledMusic;
             speaker.time = currTime;
+            speaker.volume = 1f;
             speaker.Play();
             crowdSFX.Stop();
             previouslyFloor = false;
         }
 
-        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor)
+        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor && !speakersDestroyed)
         {
             speaker.clip = normalMusic;
             speaker.time = currTime;
+            speaker.volume = .3f;
             speaker.Play();
             crowdSFX.Play();
             previouslyFloor = true;
+        }
+
+        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor && speakersDestroyed)
+        {
+            speaker.Stop();
+            crowdSFX.Play();
+        }
+
+        if (hit.gameObject.CompareTag("Ground") && previouslyFloor && speakersDestroyed)
+        {
+            speaker.Stop();
+            crowdSFX.Stop();
         }
     }
 }

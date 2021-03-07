@@ -16,12 +16,7 @@ public class ThrowableBehavior : MonoBehaviour
 
     void Break()
     {
-        if (gameObject.CompareTag("LiquorBottle"))
-        {
-            FindObjectOfType<DestroyLiquorObjective>().DecreaseBottles();
-        }
-
-        foreach (Transform child in transform)
+        foreach(Transform child in transform)
         {
             child.gameObject.AddComponent<Rigidbody>();
             child.gameObject.AddComponent<BoxCollider>();
@@ -32,7 +27,8 @@ public class ThrowableBehavior : MonoBehaviour
             child.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, child.position, explosionRadius);
         }
 
-        this.gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        Destroy(this.gameObject.GetComponent<Rigidbody>());
     }
 
     private void OnCollisionEnter(Collision collision)

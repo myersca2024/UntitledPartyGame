@@ -301,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 406188509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 0.2, z: 20}
+  m_LocalScale: {x: 83.378, y: 0.2, z: 86.843994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -349,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456072750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.727, y: 0.85, z: -3.941}
+  m_LocalPosition: {x: 1.727, y: 1.81, z: -3.941}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 721054403}
@@ -373,6 +373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e8fb0f2cb7f0242905d9c1307b7e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedThreshold: 10
+  explosionForce: 100
+  explosionRadius: 5
 --- !u!65 &456072754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -397,7 +400,6 @@ GameObject:
   - component: {fileID: 626635386}
   - component: {fileID: 626635389}
   - component: {fileID: 626635388}
-  - component: {fileID: 626635387}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -419,19 +421,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &626635387
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626635385}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &626635388
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -589,7 +578,6 @@ GameObject:
   - component: {fileID: 721054403}
   - component: {fileID: 721054406}
   - component: {fileID: 721054405}
-  - component: {fileID: 721054404}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -611,19 +599,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &721054404
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721054402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &721054405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -682,7 +657,6 @@ GameObject:
   - component: {fileID: 725946393}
   - component: {fileID: 725946396}
   - component: {fileID: 725946395}
-  - component: {fileID: 725946394}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -704,19 +678,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &725946394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725946392}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &725946395
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -849,7 +810,6 @@ GameObject:
   - component: {fileID: 1047324240}
   - component: {fileID: 1047324243}
   - component: {fileID: 1047324242}
-  - component: {fileID: 1047324241}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -871,19 +831,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1047324241
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047324239}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1047324242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -942,7 +889,6 @@ GameObject:
   - component: {fileID: 1112394749}
   - component: {fileID: 1112394752}
   - component: {fileID: 1112394751}
-  - component: {fileID: 1112394750}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -964,19 +910,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1112394750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112394748}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1112394751
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1147,6 +1080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e8fb0f2cb7f0242905d9c1307b7e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedThreshold: 15
+  explosionForce: 0
+  explosionRadius: 0
 --- !u!1 &1311618280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,7 +1094,6 @@ GameObject:
   - component: {fileID: 1311618281}
   - component: {fileID: 1311618284}
   - component: {fileID: 1311618283}
-  - component: {fileID: 1311618282}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -1180,19 +1115,6 @@ Transform:
   m_Father: {fileID: 456072752}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1311618282
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311618280}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1311618283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1313,16 +1235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
-        type: 3}
-      propertyPath: grabSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 3aa7a090548059d42b79775cb852e2e8, type: 3}
-    - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
-        type: 3}
-      propertyPath: throwSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 062115fb583905c4a8e78d49e93d6377, type: 3}
     - target: {fileID: 116604007178908885, guid: c2cc505b56a45d24981de04254afb5a3,
         type: 3}
       propertyPath: grabRange

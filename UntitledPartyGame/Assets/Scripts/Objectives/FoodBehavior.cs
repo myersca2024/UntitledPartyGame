@@ -6,6 +6,7 @@ public class FoodBehavior : MonoBehaviour
 {
 
     FoodObjective fo;
+    bool onGround = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,11 @@ public class FoodBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Ground"))
         {
             // destroy food??? 
-
-            fo.DecreaseFood();
+            if (!onGround)
+            {
+                fo.DecreaseFood();
+                onGround = true;
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ public class SpillPunchObjective : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            // break object?
+            gameObject.transform.Find("Punch").gameObject.SetActive(false);
 
             lv.PunchComplete();
         }

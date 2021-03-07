@@ -28,6 +28,7 @@ public class NPCAI : MonoBehaviour
     public Material chadMat;
     //public GameObject body;
     public GameObject head;
+    public AudioClip knockoutSFX;
 
     private Vector3 nextDestination;
     private float distanceToPlayer;
@@ -220,6 +221,7 @@ public class NPCAI : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerHitbox")
         {
+            AudioSource.PlayClipAtPoint(knockoutSFX, transform.position);
             if (currentStunTime <= 0)
             {
                 currentStunTime = stunTime;

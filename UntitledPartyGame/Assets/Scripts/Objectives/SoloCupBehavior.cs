@@ -6,6 +6,7 @@ public class SoloCupBehavior : MonoBehaviour
 {
 
     SoloCupObjective sco;
+    bool onGround = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,10 @@ public class SoloCupBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Floor"))
         {
             // kill cups?
-            sco.DecreaseCups();
+            if (!onGround)
+            {
+                sco.DecreaseCups();
+            }
         }
     }
 }

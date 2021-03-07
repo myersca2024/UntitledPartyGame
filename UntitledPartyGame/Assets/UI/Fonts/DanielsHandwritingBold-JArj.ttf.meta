@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 3fa446f99038b8d4e91b434c9c60e08a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Daniel's Handwriting
+  fontNames:
+  - Daniel's Handwriting
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4a9f63729dd87cd40ae825390a829d41, type: 3}
+  - {fileID: 12800000, guid: f3e3af367a8207a4ea271ddef6a56707, type: 3}
+  - {fileID: 12800000, guid: 10fe85cde228f8e4aa8b1d9e42bc7fe0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

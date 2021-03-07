@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 6069703550784084546}
   - component: {fileID: 6069703550784084547}
   - component: {fileID: 6069703550784084668}
+  - component: {fileID: 1881390374}
   m_Layer: 0
   m_Name: NPC_Police
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   player: {fileID: 0}
-  followDistance: 15
+  followDistance: 20
   attackDistance: 8
   eyes: {fileID: 0}
   fieldOfView: 45
@@ -196,6 +197,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   stunTime: 5
+--- !u!114 &1881390374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069703552754020383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cacd5bf51cefe4eb6f9f4acaf4ee1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3950550503628902510, guid: fe210b286bd33a74f9c0b6bda6fe499c, type: 3}
+  bulletSpeed: 40
+  reloadTime: 1
 --- !u!1 &6069703552754020409
 GameObject:
   m_ObjectHideFlags: 0

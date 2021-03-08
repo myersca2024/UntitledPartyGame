@@ -6,6 +6,7 @@ public class SpeakerBehavior : MonoBehaviour
 {
 
     SpeakerObjective so;
+    bool onGround = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,11 @@ public class SpeakerBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             // Kill speaker somehow?
-            so.DecreaseSpeaker();
+            if (!onGround)
+            {
+                so.DecreaseSpeaker();
+                onGround = true;
+            }
         }
     }
 }

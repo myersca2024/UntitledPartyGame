@@ -237,7 +237,7 @@ public class NPCAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Throwable")
+        if (collision.gameObject.tag == "Throwable" || collision.gameObject.tag == "LiquorBottle")
         {
             AudioSource.PlayClipAtPoint(knockoutSFX, transform.position);
             if (currentStunTime <= 0)

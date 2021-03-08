@@ -23,20 +23,19 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3.0f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2.0f))
             {
                 if (hit.collider.tag == "Interactable")
                 {
                     textInteraction.SetActive(true);
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        if(!isInteracted)
-                        {
+                      
                             Destroy(textInteraction);
                             textInteraction = textAfterInteraction;
-                        isInteracted = true;
+                            isInteracted = true;
                             EngagedInteraction();
-                        }
                     }
                 }
             }
@@ -50,7 +49,6 @@ public class Interactable : MonoBehaviour
     {
         if(textAfterInteraction != null)
         {
-
             if (GetComponent<AudioSource>() != null)
             {
                 audioComponent = GetComponent<AudioSource>();

@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
     bool host;
     bool solo;
 
-    int currentNoiseLevel;
+    public static int currentNoiseLevel;
     string timeToCopsStartPrefixText = "Time Until Cops Are Called: ";
     float timer;
     bool cops = false;

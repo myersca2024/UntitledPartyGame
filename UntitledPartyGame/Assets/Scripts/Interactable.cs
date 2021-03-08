@@ -28,6 +28,7 @@ public class Interactable : MonoBehaviour
                 if (hit.collider.tag == "Interactable")
                 {
                     textInteraction.SetActive(true);
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                       

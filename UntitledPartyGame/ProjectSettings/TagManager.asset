@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - Floor
   - Breakable
+  - Interactable
   layers:
   - Default
   - TransparentFX

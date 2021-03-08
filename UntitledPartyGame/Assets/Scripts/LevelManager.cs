@@ -230,6 +230,7 @@ public class LevelManager : MonoBehaviour
 
     private void SpawnCops()
     {
+        PlayerPrefs.SetInt("noise", currentNoiseLevel);
         isGameOver = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

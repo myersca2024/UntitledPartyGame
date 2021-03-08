@@ -15,9 +15,9 @@ public class GameOverManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        int noise = LevelManager.currentNoiseLevel;
-        int hoursCalc = 10 - (10 * (noise / 200));
-        hoursOfSleep = Mathf.Clamp(hoursCalc, 4, 10);
+        int noise = PlayerPrefs.GetInt("noise");
+        int hoursCalc = 10 - (noise / 14);
+        hoursOfSleep = hoursCalc;
 
         if (LevelManager.isGameOver)
         {
@@ -69,7 +69,7 @@ public class GameOverManager : MonoBehaviour
     void GoodSleep()
     {
         sleepText.text = "You got " + hoursOfSleep.ToString() + " hours of sleep.";
-        sleepDescText.text = "All your meddling made them quiet down a good deal! Upon going home, you slept very well" +
+        sleepDescText.text = "All your meddling made them quiet down a good deal! Upon going home, you slept very well " +
             "and felt rested in the morning.";
     }
 

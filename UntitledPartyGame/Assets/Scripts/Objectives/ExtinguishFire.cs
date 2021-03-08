@@ -13,12 +13,22 @@ public class ExtinguishFire : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Throwable") || collision.gameObject.CompareTag("PlayerPunch"))
+        if (collision.gameObject.CompareTag("Throwable"))
         {
             //Visibly extinguish, sounds
             AudioSource.PlayClipAtPoint(extinguishSFX, transform.position);
+            transform.Find("FireEffect").gameObject.SetActive(false);
             lv.FireComplete();
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerHitbox"))
+        {
+            AudioSource.PlayClipAtPoint(extinguishSFX, transform.position);
+            transform.Find("FireEffect").gameObject.SetActive(false);
+            lv.FireComplete();
+        }
+    }
 }

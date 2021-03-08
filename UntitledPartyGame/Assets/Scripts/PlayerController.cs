@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 10f;
     public float gravity = 9.81f;
     public GameObject speakerObject;
-    
+    public bool speakersDestroyed = false;
     public AudioClip muffledMusic;
     public AudioClip normalMusic;
 
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector3 input;
     Vector3 moveDir;
     float currTime = 0;
+    bool previouslyFloor = true;
     //bool inHouse = false;
     // Start is called before the first frame update
     void Start()
@@ -46,28 +47,41 @@ public class PlayerController : MonoBehaviour
             moveDir = Vector3.Lerp(moveDir, input, Time.deltaTime);
         }
         moveDir.y -= gravity * Time.deltaTime;
-        controller.Move(input * Time.deltaTime);
+        var collision = controller.Move(input * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("collide");
-        if (collision.gameObject.CompareTag("Ground"))
+        if (hit.gameObject.CompareTag("Ground") && previouslyFloor && !speakersDestroyed)
         {
-            Debug.Log("ground");
             speaker.clip = muffledMusic;
             speaker.time = currTime;
+            speaker.volume = 1f;
             speaker.Play();
             crowdSFX.Stop();
+            previouslyFloor = false;
         }
 
-        if (collision.gameObject.CompareTag("Floor"))
+        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor && !speakersDestroyed)
         {
-            Debug.Log("Floor");
             speaker.clip = normalMusic;
             speaker.time = currTime;
+            speaker.volume = .3f;
             speaker.Play();
             crowdSFX.Play();
+            previouslyFloor = true;
+        }
+
+        if (hit.gameObject.CompareTag("Floor") && !previouslyFloor && speakersDestroyed)
+        {
+            speaker.Stop();
+            crowdSFX.Play();
+        }
+
+        if (hit.gameObject.CompareTag("Ground") && previouslyFloor && speakersDestroyed)
+        {
+            speaker.Stop();
+            crowdSFX.Stop();
         }
     }
 }

@@ -18,6 +18,8 @@ public class FinishGame : MonoBehaviour
         {
             if (LevelManager.currentNoiseLevel <= LevelManager.winNoiseThreshold)
             {
+                Cursor.visible = true;
+                PlayerPrefs.SetInt("noise", LevelManager.currentNoiseLevel);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }

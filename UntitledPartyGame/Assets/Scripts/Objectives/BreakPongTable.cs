@@ -25,5 +25,10 @@ public class BreakPongTable : MonoBehaviour
                 lv.PongComplete();
             }
         }
+        else if (gameObject.GetComponent<Rigidbody>().velocity.magnitude >= speedThreshold)
+        {
+            AudioSource.PlayClipAtPoint(pongTableBreakSFX, gameObject.transform.position);
+            lv.PongComplete();
+        }
     }
 }

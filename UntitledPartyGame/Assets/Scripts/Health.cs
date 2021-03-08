@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void takeDamage(int damage)
+    public void takeDamage(int damage)
     {
         Mathf.Clamp(health - damage, 0, 100);
         healthBar.value = health;

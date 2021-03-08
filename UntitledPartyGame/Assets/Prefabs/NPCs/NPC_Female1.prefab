@@ -1273,6 +1273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951570933579458459}
   - component: {fileID: 6741559671385632193}
+  - component: {fileID: 6263938812297165633}
   m_Layer: 0
   m_Name: HandHitbox
   m_TagString: Hitbox
@@ -1308,6 +1309,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44879073, y: 0.60950285, z: 0.76799804}
   m_Center: {x: -0.1643944, y: -0.15474914, z: 0.2339971}
+--- !u!114 &6263938812297165633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937633784359822979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea133064122eaf4383685aaf3e16a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &1207962152935399950
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class KnockoutHost : MonoBehaviour
 {
-    LevelManager lv;
-    public AudioClip koSFX;
+    public NPCAI ai;
+    public LevelManager lv;
+    bool notComplete = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        lv = FindObjectOfType<LevelManager>();
+        //ai = this.GetComponent<NPCAI>();
+       // lv = FindObjectOfType<LevelManager>();
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("PlayerPunch"))
+        if (ai.currentState == NPCAI.FSMStates.Stun && notComplete)
         {
-            //KO the character
-            AudioSource.PlayClipAtPoint(koSFX, gameObject.transform.position);
             lv.HostComplete();
+            notComplete = false;
         }
     }
 }

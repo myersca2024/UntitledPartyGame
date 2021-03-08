@@ -13,27 +13,42 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+
         int noise = LevelManager.currentNoiseLevel;
         int hoursCalc = 10 - (10 * (noise / 200));
         hoursOfSleep = Mathf.Clamp(hoursCalc, 4, 10);
 
-        if (hoursOfSleep < 4)
+        if (LevelManager.isGameOver)
         {
-            BadSleep();
-        }
-        else if (hoursOfSleep < 6)
-        {
-            OkaySleep();
-        }
-        else if (hoursOfSleep < 9)
-        {
-            GoodSleep();
+            Arrested();
         }
         else
         {
-            GreatSleep();
+            if (hoursOfSleep < 4)
+            {
+                BadSleep();
+            }
+            else if (hoursOfSleep < 6)
+            {
+                OkaySleep();
+            }
+            else if (hoursOfSleep < 9)
+            {
+                GoodSleep();
+            }
+            else
+            {
+                GreatSleep();
+            }
         }
+    }
 
+    void Arrested()
+    {
+        sleepText.text = "You got 0 hours of sleep.";
+        sleepDescText.text = "You got caught on your huge rampage and spent all night in a jail cell wondering if it" +
+            "was worth it to get yourself in this situation.";
     }
 
     void BadSleep()

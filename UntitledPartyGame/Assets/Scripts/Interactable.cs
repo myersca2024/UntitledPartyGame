@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour
     public AudioSource audioComponent;
     public bool isInteracted;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -29,7 +28,7 @@ public class Interactable : MonoBehaviour
                 {
                     textInteraction.SetActive(true);
 
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (Input.GetKeyDown(KeyCode.E) && !isInteracted)
                     {
                       
                             Destroy(textInteraction);

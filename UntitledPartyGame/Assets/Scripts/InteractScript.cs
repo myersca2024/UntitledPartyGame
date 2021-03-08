@@ -15,6 +15,7 @@ public class InteractScript : MonoBehaviour
     public static bool haveNumber = false;
 
     private bool didError = false;
+    private bool didCall = false;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -76,12 +77,10 @@ public class InteractScript : MonoBehaviour
 
     void EngagedInteraction()
     {
-        if (textAfterInteraction != null)
-        {
-            if (GetComponent<AudioSource>() != null)
-            {
-                AudioSource.PlayClipAtPoint(audioComponent.clip, transform.position);
-            }
-        }
+         if (!didCall && audioComponent != null)
+         {
+            AudioSource.PlayClipAtPoint(audioComponent.clip, transform.position);
+            didCall = true;
+         }
     }
 }

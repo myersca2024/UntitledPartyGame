@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 6486115103531041244}
   - component: {fileID: 6486115103531041243}
   - component: {fileID: 3927664963758892177}
+  - component: {fileID: -1080010353730676828}
   m_Layer: 0
   m_Name: PlayerModel
   m_TagString: Player
@@ -792,6 +793,7 @@ MonoBehaviour:
   playerSpeed: 5
   gravity: 9.81
   speakerObject: {fileID: 0}
+  speakersDestroyed: 0
   muffledMusic: {fileID: 8300000, guid: 4b88f136bb097c44da63e9047bf40525, type: 3}
   normalMusic: {fileID: 8300000, guid: 0170f6734be898f4dac801d3fc2947fd, type: 3}
 --- !u!143 &6486115103531041243
@@ -828,6 +830,22 @@ MonoBehaviour:
   hitbox: {fileID: 4749793550250155942}
   hitboxDuration: 30
   punchSFX: {fileID: 8300000, guid: a9f9ebf032670be4ab079c8103acf052, type: 3}
+--- !u!114 &-1080010353730676828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850840983808943525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111d81e59b6d03847bcbb3912b98f1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  startingHealth: 100
+  damage: 10
+  healthBar: {fileID: 0}
 --- !u!1 &850840983808943531
 GameObject:
   m_ObjectHideFlags: 0

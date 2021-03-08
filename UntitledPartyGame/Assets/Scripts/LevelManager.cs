@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     public static bool isGameOver = false;
     public int startingNoiseLevel = 200;
-    public int winNoiseThreshold = 75;
+    public static int winNoiseThreshold = 75;
     public int timeToCops = 300;
     public int sideObjectiveNoiseReduction = 25;
     public int mainObjectiveNoiseReduction = 50;
@@ -229,18 +230,8 @@ public class LevelManager : MonoBehaviour
 
     private void SpawnCops()
     {
-        float x = 1f;
-        for (int i = 0; i < numberOfCops; i++)
-        {
-            Invoke("SpawnACop", x);
-            x += 1f;
-        }
-        haveSpawned = true;
-    }
-    
-    private void SpawnACop()
-    {
-        Instantiate(copPrefab, spawnPoint.position, spawnPoint.rotation);
+        isGameOver = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Helper Methods to denote the completion of each objective, both main and side

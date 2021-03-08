@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
     public string punchText = "Spill Punch";
     public string liquorText = "Destroy The Liquor Bottles";
     public string foodText = "Throw All Of The Food Onto The Floor";
-    public string tableText = "Break The Pool Table In The Garage";
+    public string tableText = "Punch The Pool Table In The Garage";
     public string pongText = "Break The Table Tennis Table";
     public string fireText = "Extinguish Fire Pit";
     public string hostText = "Knock Out The Host";

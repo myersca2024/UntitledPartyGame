@@ -177,10 +177,11 @@ public class NPCAI : MonoBehaviour
                 if (currentWaypoint < waypoints.Length)
                 {
                     currentWaypoint++;
-                }
-                else
-                {
-                    Destroy(gameObject);
+
+                    if (currentWaypoint >= waypoints.Length)
+                    {
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

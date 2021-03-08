@@ -18,7 +18,16 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Just making sure");
         if(other.gameObject.tag == "Hitbox")
+        {
+            takeDamage(damage);
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Hitbox"))
         {
             takeDamage(damage);
         }

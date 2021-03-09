@@ -15,7 +15,7 @@ public class SpillPunchObjective : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Ground"))
         {
             gameObject.transform.Find("Punch").gameObject.SetActive(false);
 
